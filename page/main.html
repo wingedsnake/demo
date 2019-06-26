@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../framework/adminlte/dist/css/AdminLTE.min.css">
   <link rel="stylesheet" href="../framework/adminlte/dist/css/skins/skin-blue.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <link rel="stylesheet" href="../css/demo.css">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -23,7 +24,7 @@
     </a>
     <nav class="navbar navbar-static-top" role="navigation">
       <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
-        <span class="sr-only">Toggle navigation</span>
+        <span class="sr-only">导航切换</span>
       </a>
       <div class="navbar-custom-menu">
         <ul class="nav navbar-nav">
@@ -31,7 +32,7 @@
           <li class="dropdown messages-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <i class="fa fa-envelope-o"></i>
-              <span class="label label-success">4</span>
+              <span class="label label-danger">4</span>
             </a>
             <ul class="dropdown-menu">
               <li class="header">你有4条咨询信息。</li>
@@ -84,7 +85,7 @@
               <!-- Menu Footer-->
               <li class="user-footer">
                 <div class="pull-left">
-                  <a href="#" class="btn btn-default btn-flat">账户设置</a>
+                  <a href="#" class="btn btn-default btn-flat">账户摘要</a>
                 </div>
                 <div class="pull-right">
                   <a href="#" class="btn btn-default btn-flat">登出</a>
@@ -123,7 +124,7 @@
 
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">菜单</li>
-        <li class="active"><a href="#"><i class="fa fa-link"></i> <span>咨询列表</span></a></li>
+        <li><a href="#"><i class="fa fa-link"></i> <span>咨询列表</span></a></li>
         <li><a href="#"><i class="fa fa-link"></i> <span>药品管理</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>诊断</span>
@@ -143,22 +144,181 @@
   <div class="content-wrapper">
     <section class="content-header">
       <h1>
-        账户设置
-        <small>当前账户设置</small>
+        账户信息
+        <small>当前账户</small>
       </h1>
       <ol class="breadcrumb">
-        <li><a href="#"><i class="fa fa-dashboard"></i> 首页</a></li>
-        <li class="active">账户设置</li>
+        <li><a href="#"><i class="fa fa-dashboard"></i> 账户摘要</a></li>
+        <!--<li class="active">账户信息</li>-->
       </ol>
     </section>
 
     <!-- 内容 -->
     <section class="content container-fluid">
+      <div class="row">
+        <!-- 就诊客户记录 -->
+        <div class="col-md-4 connectedSortable">
+          <div class="box box-primary">
+            <div class="box-header with-border">
+              <h3 class="box-title">就诊过客户</h3>
 
-      <!--------------------------
-        | 菜单内容在这里 |
+              <div class="box-tools pull-right">
+                <span class="label label-primary">8 位客户</span>
+                <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
+                </button>
+              </div>
+            </div>
+            <!-- 开头 -->
+            <div class="box-body no-padding">
+              <ul class="users-list clearfix">
+                <li>
+                  <img src="../img/user1-128x128.jpg" alt="User Image">
+                  <a class="users-list-name" href="#">Alexander Pierce</a>
+                  <span class="users-list-date">今天</span>
+                </li>
+                <li>
+                  <img src="../img/user8-128x128.jpg" alt="User Image">
+                  <a class="users-list-name" href="#">Norman</a>
+                  <span class="users-list-date">昨天</span>
+                </li>
+                <li>
+                  <img src="../img/user7-128x128.jpg" alt="User Image">
+                  <a class="users-list-name" href="#">Jane</a>
+                  <span class="users-list-date">2019-6-26</span>
+                </li>
+                <li>
+                  <img src="../img/user6-128x128.jpg" alt="User Image">
+                  <a class="users-list-name" href="#">John</a>
+                  <span class="users-list-date">2019-6-26</span>
+                </li>
+                <li>
+                  <img src="../img/user2-160x160.jpg" alt="User Image">
+                  <a class="users-list-name" href="#">Alexander</a>
+                  <span class="users-list-date">2019-6-25</span>
+                </li>
+                <li>
+                  <img src="../img/user5-128x128.jpg" alt="User Image">
+                  <a class="users-list-name" href="#">Sarah</a>
+                  <span class="users-list-date">2019-5-11</span>
+                </li>
+                <li>
+                  <img src="../img/user4-128x128.jpg" alt="User Image">
+                  <a class="users-list-name" href="#">Nora</a>
+                  <span class="users-list-date">2019-5-11</span>
+                </li>
+                <li>
+                  <img src="../img/user3-128x128.jpg" alt="User Image">
+                  <a class="users-list-name" href="#">Nadia</a>
+                  <span class="users-list-date">2019-5-9</span>
+                </li>
+              </ul>
+              <!-- 客户列表 -->
+            </div>
+            <!-- 显示更多 -->
+            <div class="box-footer text-center">
+              <a href="javascript:void(0)" class="uppercase">查看所有就诊过的客户</a>
+            </div>
+          </div>
+        </div>
+
+        <!-- 当前账户信息 -->
+        <div class="col-md-6">
+          <div class="box box-widget widget-user">
+            <!-- Add the bg color to the header using any of the bg-* classes -->
+            <div class="widget-user-header bg-black" style="background: url('../img/photo1.png') center center;">
+              <h3 class="widget-user-username">王医生</h3>
+              <h5 class="widget-user-desc">信息摘要</h5>
+            </div>
+            <div class="widget-user-image">
+              <img class="img-circle" src="../img/user8-128x128.jpg" alt="User Avatar">
+            </div>
+            <div class="form-horizontal">
+              <div class="box-body">
+                <div class="row">
+                  <div class="col-sm-4 border-right">
+                    <div class="description-block">
+                      <h5 class="description-header">就诊人数</h5>
+                      <span class="description-text">78</span>
+                    </div>
+                  </div>
+                  <div class="col-sm-4 border-right">
+                    <!-- 隔行 -->
+                  </div>
+                  <div class="col-sm-4 border-left">
+                    <div class="description-block">
+                      <h5 class="description-header">待诊人数</h5>
+                      <span class="description-text">12</span>
+                    </div>
+                  </div>
+                </div>
+                <!-- 账户信息体 -->
+                <!-- 医师姓名-start -->
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">姓 名</label>
+                  <div class="col-sm-10">
+                    <span class="form-control border-white">王健林</span>
+                  </div>
+                </div>
+                <!-- 医师姓名-end -->
+                <!-- 医师编号-start -->
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">编 号</label>
+                  <div class="col-sm-10">
+                    <span class="form-control border-white">CH12306-11</span>
+                  </div>
+                </div>
+                <!-- 医师编号-end -->
+                <!-- 医师性别-start -->
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">性 别</label>
+                  <div class="col-sm-10">
+                    <span class="form-control border-white">男</span>
+                  </div>
+                </div>
+                <!-- 医师性别-end -->
+                <!-- 医师年龄-start -->
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">年 龄</label>
+                  <div class="col-sm-10">
+                    <span class="form-control border-white">42</span>
+                  </div>
+                </div>
+                <!-- 医师年龄-end -->
+                <!-- 医师科室-start -->
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">科 室</label>
+                  <div class="col-sm-10">
+                    <span class="form-control border-white">中医养生科</span>
+                  </div>
+                </div>
+                <!-- 医师科室-end -->
+                <!-- 医师入职时间-start -->
+                <div class="form-group">
+                  <label class="col-sm-2 control-label">入职时间</label>
+                  <div class="col-sm-10">
+                    <span class="form-control border-white">2019年6月12日</span>
+                  </div>
+                </div>
+                <!-- 医师入职时间-end -->
+                <!-- 医师备注-start -->
+                <!--<div class="form-group">
+                  <label class="col-sm-2 control-label">备 注</label>
+                  <div class="col-sm-10">
+                    <span class="form-control border-white">-</span>
+                  </div>
+                </div>-->
+                <!-- 医师备注-end -->
+              </div>
+            </div>
+            <div class="box-footer text-center padding-10">
+              <a href="#">更详细</a>
+            </div>
+          </div>
+        </div>
+        <!------------------------
+        | 菜单内容在这里         |
         -------------------------->
-
+      </div>
     </section>
   </div>
   <footer class="main-footer">
@@ -228,6 +388,8 @@
 </div>
 <!-- js脚本 -->
 <script src="../framework/jquery/jquery.min.js"></script>
+<script src="../framework/jquery-ui/jquery-ui.min.js"></script>
+<script src="../framework/moment/min/moment.min.js"></script>
 <script src="../framework/bootstrap/js/bootstrap.min.js"></script>
 <script src="../framework/adminlte/dist/js/adminlte.min.js"></script>
 </body>
