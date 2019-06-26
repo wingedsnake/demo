@@ -163,14 +163,15 @@
               <h3 class="box-title">就诊过客户</h3>
 
               <div class="box-tools pull-right">
-                <span class="label label-primary">8 位客户</span>
+                <span class="label label-primary">13 位客户</span>
                 <button type="button" class="btn btn-box-tool" data-widget="collapse"><i class="fa fa-minus"></i>
                 </button>
               </div>
             </div>
             <!-- 开头 -->
             <div class="box-body no-padding">
-              <ul class="users-list clearfix">
+              <!-- 就诊客户摘要最高显示387px，多出的部分隐藏并出现滚动条滚动 -->
+              <ul class="users-list clearfix" id="userlist">
                 <li>
                   <img src="../img/user1-128x128.jpg" alt="User Image">
                   <a class="users-list-name" href="#">Alexander Pierce</a>
@@ -216,7 +217,7 @@
             </div>
             <!-- 显示更多 -->
             <div class="box-footer text-center">
-              <a href="javascript:void(0)" class="uppercase">查看所有就诊过的客户</a>
+              <a href="javascript:void(0)" id="usermore" class="uppercase">查看所有就诊过的客户</a>
             </div>
           </div>
         </div>
@@ -237,8 +238,8 @@
                 <div class="row">
                   <div class="col-sm-4 border-right">
                     <div class="description-block">
-                      <h5 class="description-header">就诊人数</h5>
-                      <span class="description-text">78</span>
+                      <h5 class="description-header">已就诊人数</h5>
+                      <span class="description-text">13</span>
                     </div>
                   </div>
                   <div class="col-sm-4 border-right">
@@ -246,7 +247,7 @@
                   </div>
                   <div class="col-sm-4 border-left">
                     <div class="description-block">
-                      <h5 class="description-header">待诊人数</h5>
+                      <h5 class="description-header">待就诊人数</h5>
                       <span class="description-text">12</span>
                     </div>
                   </div>
@@ -392,5 +393,36 @@
 <script src="../framework/moment/min/moment.min.js"></script>
 <script src="../framework/bootstrap/js/bootstrap.min.js"></script>
 <script src="../framework/adminlte/dist/js/adminlte.min.js"></script>
+<script src="../framework/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script>
+  $(function(){
+    /**
+     * 更多就诊客户
+     */
+    $("#usermore").click(function(e){
+      e.preventDefault();
+      e.stopPropagation();
+
+      $("#userlist").animate({
+        height:'387px'
+      },500);
+
+      //500毫秒之后更改提示
+      var $that = $(this);
+      setTimeout(function(){
+        $that.parent().append("<span style='color:#aaa'>已全部显示</span>");
+        $that.remove();
+
+        //user-list 滚动轴
+        /*$("#userlist").slimScroll({
+            height: '387px'
+        });*/
+      },500);
+
+
+    });
+
+  });
+</script>
 </body>
 </html>
