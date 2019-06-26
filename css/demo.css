@@ -7,6 +7,15 @@
 .padding-10{
     padding: 10px!important;
 }
+
+.reset-ps{
+    margin:0 10px
+}
+
+.reset-ps a{
+    width:102px
+}
+
 .account-box{
     width:567px;
     padding: 0 15px;
