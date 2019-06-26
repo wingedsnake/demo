@@ -1,10 +1,67 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>智慧诊疗-找回密码</title>
-</head>
-<body>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="../framework/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../framework/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../framework/Ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="../framework/adminlte/dist/css/AdminLTE.min.css">
 
+    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+    <script src="https://oss.maxcdn.com/html5shiv/3.7.3/html5shiv.min.js"></script>
+    <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<body class="hold-transition lockscreen">
+<div class="lockscreen-wrapper">
+    <div class="lockscreen-logo">
+        <a href="./login.html"><b>智慧诊疗</b>管理</a>
+    </div>
+    <div class="lockscreen-item">
+        <div class="lockscreen-image">
+            <img src="../img/avatar5.png" alt="找回用户">
+        </div>
+
+        <form class="lockscreen-credentials">
+            <div class="input-group">
+                <input type="email" id="email" class="form-control" placeholder="请输入您注册的EMAIL邮箱">
+
+                <div class="input-group-btn">
+                    <button type="button" id="next" class="btn"><i class="fa fa-arrow-right text-muted"></i></button>
+                </div>
+            </div>
+        </form>
+
+    </div>
+    <div class="help-block text-center">
+        请输入您的EMAIL邮箱
+    </div>
+    <div class="text-center">
+        <a href="login.html">返回登录</a>
+    </div>
+</div>
+<script src="../framework/jquery/jquery.min.js"></script>
+<script src="../framework/bootstrap/js/bootstrap.min.js"></script>
+<script>
+    $(function(){
+        $("#next").click(function(){
+            var email = $("#email").val();
+            if(email != ""){
+                window.location.href = "./reset.html";
+            }else{
+                $(".lockscreen-item").css({
+                    border:'1px solid #dc1b1b'
+                });
+            }
+        });
+    });
+</script>
 </body>
 </html>
