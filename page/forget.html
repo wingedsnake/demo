@@ -29,7 +29,7 @@
             <img src="../img/avatar5.png" alt="找回用户">
         </div>
 
-        <form class="lockscreen-credentials">
+        <form class="lockscreen-credentials" action="./reset.html">
             <div class="input-group">
                 <input type="email" id="email" class="form-control" placeholder="请输入您注册的EMAIL邮箱">
 
@@ -51,10 +51,11 @@
 <script src="../framework/bootstrap/js/bootstrap.min.js"></script>
 <script>
     $(function(){
-        $("#next").click(function(){
+        $("#next").click(function(e){
+            event.preventDefault();
             var email = $("#email").val();
             if(email != ""){
-                window.location.href = "./reset.html";
+                $("form").submit();
             }else{
                 $(".lockscreen-item").css({
                     border:'1px solid #dc1b1b'
