@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>管理系统</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="../framework/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../framework/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../framework/Ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="../framework/adminlte/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="../framework/adminlte/dist/css/skins/skin-blue.min.css">
+    <link rel="stylesheet" href="../framework/iCheck/all.css">
+    <link rel="stylesheet" href="../framework/select2/dist/css/select2.min.css">
+    <link rel="stylesheet" href="../css/demo.css">
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+    <!-- 主导航栏 -->
+    <header class="main-header">
+        <a href="index2.html" class="logo">
+            <span class="logo-mini"><b>系</b>统</span>
+            <span class="logo-lg"><b>后台</b>管理</span>
+        </a>
+        <nav class="navbar navbar-static-top" role="navigation">
+            <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                <span class="sr-only">导航切换</span>
+            </a>
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+                    <!-- 查看消息 -->
+                    <li class="dropdown messages-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-envelope-o"></i>
+                            <span class="label label-danger">4</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="header">你有4条咨询信息。</li>
+                            <li>
+                                <ul class="menu">
+                                    <li>
+                                        <a href="#">
+                                            <div class="pull-left">
+                                                <img src="../img/user8-128x128.jpg" class="img-circle" alt="User Image">
+                                            </div>
+                                            <h4>
+                                                你好！医生
+                                                <small><i class="fa fa-clock-o"></i> 5 分钟前</small>
+                                            </h4>
+                                            <p>这几天身体感觉棒棒的~</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="footer"><a href="#">查看所有</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown user user-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <img src="../img/user8-128x128.jpg" class="user-image" alt="User Image">
+                            <span class="hidden-xs">王医生</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="user-header">
+                                <img src="../img/user8-128x128.jpg" class="img-circle" alt="User Image">
+
+                                <p>
+                                    医生姓名: 王医生
+                                    <small>当前日期: 2019年06月25日</small>
+                                </p>
+                            </li>
+                            <!--<li class="user-body">
+                              <div class="row">
+                                <div class="col-xs-4 text-center">
+                                  <a href="#">修改信息</a>
+                                </div>
+                                <div class="col-xs-4 text-center">
+                                  <a href="#"></a>
+                                </div>
+                                <div class="col-xs-4 text-center">
+                                  <a href="#"></a>
+                                </div>
+                              </div>
+                            </li>-->
+                            <!-- Menu Footer-->
+                            <li class="user-footer">
+                                <div class="pull-left">
+                                    <a href="#" class="btn btn-default btn-flat">账户摘要</a>
+                                </div>
+                                <div class="pull-right">
+                                    <a href="#" class="btn btn-default btn-flat">登出</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--<li>
+                      <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                    </li>-->
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <aside class="main-sidebar">
+        <section class="sidebar">
+            <div class="user-panel">
+                <div class="pull-left image">
+                    <img src="../img/user8-128x128.jpg" class="img-circle" alt="User Image">
+                </div>
+                <div class="pull-left info">
+                    <p>王医生</p>
+                    <a href="#"><i class="fa fa-circle text-success"></i> 在线</a>
+                </div>
+            </div>
+
+            <!--<form action="#" method="get" class="sidebar-form">
+              <div class="input-group">
+                <input type="text" name="q" class="form-control" placeholder="Search...">
+                <span class="input-group-btn">
+                    <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
+                    </button>
+                  </span>
+              </div>
+            </form>-->
+
+            <ul class="sidebar-menu" data-widget="tree">
+                <li class="header">菜单</li>
+                <li><a href="#"><i class="fa fa-link"></i> <span>咨询列表</span></a></li>
+                <li><a href="#"><i class="fa fa-link"></i> <span>药品管理</span></a></li>
+                <li class="treeview">
+                    <a href="#"><i class="fa fa-link"></i> <span>诊断</span>
+                        <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="#">处方单</a></li>
+                        <li><a href="#">结果</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </aside>
+
+    <div class="content-wrapper">
+        <section class="content-header">
+            <h1>
+                账户详情
+                <small>当前账户</small>
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="./main.html"><i class="fa fa-dashboard"></i> 账户摘要</a></li>
+                <li class="active">账户设置</li>
+            </ol>
+        </section>
+
+        <!-- 内容 -->
+        <section class="content container-fluid">
+            <div class="row">
+                <!-- 当前账户信息 -->
+                <div class="account-box">
+                    <div class="box box-widget widget-user">
+                        <!-- Add the bg color to the header using any of the bg-* classes -->
+                        <div class="widget-user-header bg-black" style="background: url('../img/photo1.png') center center;">
+                            <div class="box-tools" style="position: absolute;right:5px;top:5px">
+                                <button type="button" id="accountPage" class="btn btn-box-tool" data-toggle="tooltip" title="返回上一页">
+                                    <i class="fa fa-reply"></i></button>
+                            </div>
+                            <h3 class="widget-user-username">王医生</h3>
+                            <h5 class="widget-user-desc">信息摘要</h5>
+                        </div>
+                        <div class="widget-user-image" style="z-index: 900" id="userImg">
+                            <button id="upload" style="color: #fff;position: absolute;top:13px;left: 12px;
+                                    z-index: 991;font-size: 60px;border:0;padding:0;margin:0;background:none" class="fa fa-camera"></button>
+                            <img class="img-circle" src="../img/user8-128x128.jpg" alt="User Avatar">
+                        </div>
+                        <form class="form-horizontal">
+                            <div class="box-body">
+                                <div class="row" id="accountBox" style="margin-top:36px">
+                                    <div class="col-sm-12">
+                                        <!-- 账户信息体 -->
+                                        <div class="row">
+                                            <!-- 医师姓名-start -->
+                                            <div class="col-sm-11">
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label">姓 名</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" style="width:100%"  class="form-control" value="王健林" placeholder="请输入真实姓名"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- 医师姓名-end -->
+                                        <!-- 医师性别-start -->
+                                        <div class="row">
+                                            <div class="col-sm-11">
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label">性 别</label>
+                                                    <div class="col-sm-10">
+                                                        <select class="form-control select2" style="width: 100%;">
+                                                            <option selected="selected" value="0">男</option>
+                                                            <option value="1">女</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- 医师性别-end -->
+                                        <!-- 医师编号-start -->
+                                        <div class="row">
+                                            <div class="col-sm-11">
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label">编 号</label>
+                                                    <div class="col-sm-10">
+                                                        <span class="form-control border-white" style="padding-left: 0">CH12306-11</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- 医师编号-end -->
+                                        <!-- 医师年龄-start -->
+                                        <div class="row">
+                                            <div class="col-sm-11">
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label">年 龄</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" class="form-control" style="width: 100%" value="42" placeholder="请输入真实年龄"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- 医师年龄-end -->
+                                        <!-- 入职时间-start -->
+                                        <div class="row">
+                                            <div class="col-sm-11">
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label" style="padding-right: 2px">入职时间</label>
+                                                    <div class="col-sm-10">
+                                                        <span class="form-control border-white" style="padding-left:0">2019年6月12日</span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- 入职时间-end -->
+                                        <!-- 医师科室-start -->
+                                        <div class="row">
+                                            <div class="col-sm-11">
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label">科 室</label>
+                                                    <div class="col-sm-10">
+                                                        <select class="form-control select2 categroy" style="width: 100%;">
+                                                            <option selected="selected">中医养生</option>
+                                                            <option>艾灸科</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+
+                                        <!-- 医师科室-end -->
+                                        <!-- 医师EMAIL邮箱-start -->
+                                        <div class="row">
+                                            <div class="col-sm-11">
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label" style="padding-right: 2px">电子邮箱</label>
+                                                    <div class="col-sm-10">
+                                                        <input type="text" class="form-control" style="width: 100%" value="zj13656800820@aliyun.com" placeholder="请输入EMAIL邮箱号"/>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- 医师EMAIL邮箱-end -->
+                                        <!-- 医师联系住址-start -->
+                                        <div class="row">
+                                            <div class="col-sm-11">
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label" style="padding-right: 0">联系住址</label>
+                                                    <div class="col-sm-10">
+                                                        <textarea class="form-control" placeholder="请输入可联系住址"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- 医师联系住址-end -->
+                                        <!--医师备注-start -->
+                                        <div class="row">
+                                            <div class="col-sm-11">
+                                                <div class="form-group">
+                                                    <label class="col-sm-2 control-label" style="padding-right: 0">备 注</label>
+                                                    <div class="col-sm-10">
+                                                        <textarea class="form-control"></textarea>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <!-- 医师备注-end -->
+                                        <div style="height: 30px"></div><!-- 滚动条有个BUG，暂未解决 -->
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="box-footer text-center padding-10">
+                                <button class="btn btn-primary">信息保存</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+    <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+            当前系统版本 V1.0.0
+        </div>
+        <strong>Copyright &copy; 2019 <a href="#">亦揽工作室</a>.</strong> 版权所有.
+    </footer>
+    <div class="control-sidebar-bg"></div>
+</div>
+<!-- js脚本 -->
+<script src="../framework/jquery/jquery.min.js"></script>
+<script src="../framework/jquery-ui/jquery-ui.min.js"></script>
+<script src="../framework/moment/min/moment.min.js"></script>
+<script src="../framework/bootstrap/js/bootstrap.min.js"></script>
+<script src="../framework/adminlte/dist/js/adminlte.min.js"></script>
+<script src="../framework/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="../framework/iCheck/icheck.min.js"></script>
+<script src="../framework/select2/dist/js/select2.min.js"></script>
+<script>
+    $(function(){
+        //内容滚动条
+        $("#accountBox").slimScroll({
+            height: '330px',
+        });
+
+        //select2插件初始化
+        $('.select2').select2({
+            minimumResultsForSearch: -1
+        })
+
+       //科室不需要去除查询
+       $(".categroy").select2();
+
+        //返回上一页
+        $("#accountPage").click(function(){
+            window.location.href = "./account.html";
+        });
+
+    });
+</script>
+</body>
+</html>
