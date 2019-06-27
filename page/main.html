@@ -41,7 +41,7 @@
                 <ul class="menu">
                   <li>
                     <!-- 调用message函数: param -> 消息ID -->
-                    <a href="javascript:void(0)" onclick="message()">
+                    <a href="./check.html">
                       <div class="pull-left">
                         <img src="../img/user6-128x128.jpg" class="img-circle" alt="咨询用户">
                       </div>
@@ -54,7 +54,7 @@
                   </li>
                 </ul>
               </li>
-              <li class="footer"><a href="./all-message.html">查看所有</a></li>
+              <li class="footer"><a href="message.html">查看所有</a></li>
             </ul>
           </li>
 
@@ -130,7 +130,7 @@
 
       <ul class="sidebar-menu" data-widget="tree">
         <li class="header">菜单</li>
-        <li><a href="./all-message.html"><i class="fa fa-link"></i> <span>咨询列表</span></a></li>
+        <li><a href="message.html"><i class="fa fa-link"></i> <span>咨询列表</span></a></li>
         <li><a href="#"><i class="fa fa-link"></i> <span>药品管理</span></a></li>
         <li class="treeview">
           <a href="#"><i class="fa fa-link"></i> <span>诊断</span>
@@ -367,22 +367,6 @@
       },500);
     });
   });
-
-
-  /**
-   * 消息弹出层
-   */
-  function message(){
-    layer.open({
-      type: 2,
-      title: '咨询消息',
-      shadeClose: true,
-      shade: false,
-      maxmin: false, //开启最大化最小化按钮
-      area: ['836px', '478px'],
-      content: './message.html'
-    });
-  }
 </script>
 </body>
 </html>

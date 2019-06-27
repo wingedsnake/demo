@@ -11,10 +11,9 @@
     <link rel="stylesheet" href="../framework/adminlte/dist/css/AdminLTE.min.css">
     <link rel="stylesheet" href="../framework/adminlte/dist/css/skins/skin-blue.min.css">
     <link rel="stylesheet" href="../framework/iCheck/all.css">
-    <link rel="stylesheet" href="../framework/select2/dist/css/select2.min.css">
-    <link rel="stylesheet" href="../css/demo.css">
-
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <link rel="stylesheet" href="../framework/layer/theme/default/layer.css">
+    <link rel="stylesheet" href="../css/demo.css">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
 <div class="wrapper">
@@ -42,9 +41,10 @@
                             <li>
                                 <ul class="menu">
                                     <li>
-                                        <a href="./check.html">
+                                        <!-- 调用message函数: param -> 消息ID -->
+                                        <a href="javascript:void(0)" onclick="message()">
                                             <div class="pull-left">
-                                                <img src="../img/user6-128x128.jpg" class="img-circle" alt="路人甲">
+                                                <img src="../img/user6-128x128.jpg" class="img-circle" alt="咨询用户">
                                             </div>
                                             <h4>
                                                 你好！医生
@@ -58,6 +58,7 @@
                             <li class="footer"><a href="message.html">查看所有</a></li>
                         </ul>
                     </li>
+
                     <li class="dropdown user user-menu">
                         <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                             <img src="../img/user8-128x128.jpg" class="user-image" alt="User Image">
@@ -86,6 +87,9 @@
                             </li>
                         </ul>
                     </li>
+                    <!--<li>
+                      <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                    </li>-->
                 </ul>
             </div>
         </nav>
@@ -104,7 +108,7 @@
 
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">菜单</li>
-                <li><a href="message.html"><i class="fa fa-link"></i> <span>咨询列表</span></a></li>
+                <li class="active"><a href="message.html"><i class="fa fa-link"></i> <span>咨询列表</span></a></li>
                 <li><a href="#"><i class="fa fa-link"></i> <span>药品管理</span></a></li>
                 <li class="treeview">
                     <a href="#"><i class="fa fa-link"></i> <span>诊断</span>
@@ -124,88 +128,116 @@
     <div class="content-wrapper">
         <section class="content-header">
             <h1>
-                修改密码
-                <small>当前账户</small>
+                咨询列表
             </h1>
             <ol class="breadcrumb">
                 <li><a href="./main.html"><i class="fa fa-dashboard"></i> 账户摘要</a></li>
-                <li class="active">修改密码</li>
+                <li class="active">咨询列表</li>
             </ol>
         </section>
 
         <!-- 内容 -->
         <section class="content container-fluid">
             <div class="row">
-                <!-- 当前账户信息 -->
-                <div class="account-box">
-                    <div class="box box-widget widget-user">
-                        <div class="widget-user-header bg-aqua-active">
-                            <h3 class="widget-user-username">王医生</h3>
-                            <h5 class="widget-user-desc">修改密码</h5>
+                <!-- 就诊客户记录 -->
+                <div class="col-md-3">
+                    <div class="box box-solid">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">菜单</h3>
                         </div>
-                        <div class="widget-user-image" style="z-index: 900" id="userImg">
-                            <img class="img-circle" src="../img/user8-128x128.jpg" alt="User Avatar">
+                        <div class="box-body no-padding">
+                            <ul class="nav nav-pills nav-stacked">
+                                <li><a href="./message.html"><i class="fa fa-inbox"></i> 未查看消息
+                                    <span class="label label-primary pull-right">12</span></a></li>
+                                <li><a href="#"><i class="fa fa-envelope-o"></i> 已回复消息</a></li>
+                                <li><a href="#"><i class="fa fa-trash-o"></i> 回收站</a></li>
+                            </ul>
                         </div>
-                        <form class="form-horizontal">
-                            <div class="box-body">
-                                <div class="row" id="accountBox" style="margin-top:36px">
-                                    <div class="col-sm-12">
-                                        <!-- 账户信息体 -->
-                                        <!-- 医师姓名-start -->
-                                        <div class="row">
-                                            <div class="col-sm-11">
-                                                <div class="form-group">
-                                                    <label class="col-sm-2 control-label">原密码</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="password" style="width:100%"  class="form-control" value="" placeholder="请输入当前密码"/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- 医师姓名-end -->
-                                        <!-- 医师性别-start -->
-                                        <div class="row">
-                                            <div class="col-sm-11">
-                                                <div class="form-group">
-                                                    <label class="col-sm-2 control-label">新密码</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="password" style="width:100%"  class="form-control" value="" placeholder="请输入新密码"/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- 医师性别-end -->
-                                        <!-- 医师编号-start -->
-                                        <div class="row">
-                                            <div class="col-sm-11">
-                                                <div class="form-group">
-                                                    <label class="col-sm-2 control-label" style="padding-right: 7px">密码确认</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="password" style="width:100%"  class="form-control" value="" placeholder="确认新密码"/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- 医师编号-end -->
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="box-footer text-center padding-10">
-                                <button class="btn btn-primary">密码修改</button>
-                            </div>
-                        </form>
+                        <!-- /.box-body -->
                     </div>
                 </div>
+                <!-- /.col -->
+                <div class="col-md-9">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">查看消息</h3>
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body no-padding">
+                            <div class="box box-widget" style="margin-bottom: 0">
+                                <div class="box-header with-border">
+                                    <div class="user-block">
+                                        <img class="img-circle" src="../img/user6-128x128.jpg" alt="User Image">
+                                        <span class="username"><a href="#">路人甲</a></span>
+                                        <span class="description">2019-06-11 11:00</span>
+                                    </div>
+                                </div>
+                                <!-- /.box-header -->
+                                <div class="box-body">
+                                    <!-- post text -->
+                                    <p>中医理论来源于对医疗经验的总结及中国古代的阴阳五行思想。其内容包括精气学说、阴阳五行学说、
+                                        气血津液、藏象、经络、体质、病因、发病、病机、治则、养生等。早在两千多年前，
+                                        中医专著《黄帝内经》问世，奠定了中医学的基础。时至今日，中国传统医学相关的理论、
+                                        诊断法、治疗方法等，均可在此书中找到根源。</p>
+
+                                    <p>中医学理论体系是经过长期的临床实践，在唯物论和辨证法思想指导下
+                                        逐步形成的，它来源于实践，反过来又指导实践。通过对现象的分析，
+                                        以探求其内在机理。</p>
+                                </div>
+                                <!-- /.box-body -->
+                                <div class="box-footer box-comments">
+                                    <div class="box-comment">
+                                        <!-- User image -->
+                                        <img class="img-circle img-sm" src="../img/user8-128x128.jpg" alt="王医生">
+
+                                        <div class="comment-text">
+                                          <span class="username">
+                                            王医生
+                                            <span class="text-muted pull-right">2019-06-26 12:15</span>
+                                          </span>
+                                            气是构成天地万物的原始物质。气的运动称为“气机”，有“升降出入”四种形式。
+                                            由运动而产生的各种变化，称为“气化”，如动物的“生长壮老已” ，
+                                            植物的“生长化收藏”。
+                                        </div>
+                                    </div>
+                                    <div class="box-comment">
+                                        <img class="img-circle img-sm" src="../img/user6-128x128.jpg" alt="路人甲">
+
+                                        <div class="comment-text">
+                                          <span class="username">
+                                            路人甲
+                                            <span class="text-muted pull-right">2019-06-26 14:15</span>
+                                          </span>
+                                            阴阳的交互作用包括：阴阳交感、对立制约、互根互用、消长平衡、相互转化。
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="box-footer">
+                                    <form action="#" method="post">
+                                        <img class="img-responsive img-circle img-sm" src="../img/user8-128x128.jpg" alt="发送方">
+                                        <div class="img-push">
+                                            <input type="text" class="form-control input-sm" placeholder="输入要发送的消息">
+                                        </div>
+                                    </form>
+                                </div>
+                            </div>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                    <!-- /. box -->
+                </div>
+                <!-- /.col -->
             </div>
-        </section>
     </div>
-    <footer class="main-footer">
-        <div class="pull-right hidden-xs">
-            当前系统版本 V1.0.0
-        </div>
-        <strong>Copyright &copy; 2019 <a href="#">亦揽工作室</a>.</strong> 版权所有.
-    </footer>
-    <div class="control-sidebar-bg"></div>
+    </section>
+</div>
+<footer class="main-footer">
+    <div class="pull-right hidden-xs">
+        当前系统版本 V1.0.0
+    </div>
+    <strong>Copyright &copy; 2019 <a href="#">亦揽工作室</a>.</strong> 版权所有.
+</footer>
+<div class="control-sidebar-bg"></div>
 </div>
 <!-- js脚本 -->
 <script src="../framework/jquery/jquery.min.js"></script>
@@ -215,9 +247,6 @@
 <script src="../framework/adminlte/dist/js/adminlte.min.js"></script>
 <script src="../framework/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 <script src="../framework/iCheck/icheck.min.js"></script>
-<script src="../framework/select2/dist/js/select2.min.js"></script>
-<script>
-    // ... submit
-</script>
+<script src="../framework/layer/layer.js"></script>
 </body>
 </html>
