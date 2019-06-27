@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>管理系统</title>
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <link rel="stylesheet" href="../framework/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../framework/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../framework/Ionicons/css/ionicons.min.css">
+    <link rel="stylesheet" href="../framework/adminlte/dist/css/AdminLTE.min.css">
+    <link rel="stylesheet" href="../framework/adminlte/dist/css/skins/skin-blue.min.css">
+    <link rel="stylesheet" href="../framework/iCheck/all.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+    <link rel="stylesheet" href="../framework/layer/theme/default/layer.css">
+    <link rel="stylesheet" href="../css/demo.css">
+</head>
+<body class="hold-transition skin-blue sidebar-mini">
+<div class="wrapper">
+
+    <!-- 主导航栏 -->
+    <header class="main-header">
+        <a href="index2.html" class="logo">
+            <span class="logo-mini"><b>系</b>统</span>
+            <span class="logo-lg"><b>后台</b>管理</span>
+        </a>
+        <nav class="navbar navbar-static-top" role="navigation">
+            <a href="#" class="sidebar-toggle" data-toggle="push-menu" role="button">
+                <span class="sr-only">导航切换</span>
+            </a>
+            <div class="navbar-custom-menu">
+                <ul class="nav navbar-nav">
+                    <!-- 查看消息 -->
+                    <li class="dropdown messages-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <i class="fa fa-envelope-o"></i>
+                            <span class="label label-danger">4</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="header">你有4条咨询信息。</li>
+                            <li>
+                                <ul class="menu">
+                                    <li>
+                                        <!-- 调用message函数: param -> 消息ID -->
+                                        <a href="javascript:void(0)" onclick="message()">
+                                            <div class="pull-left">
+                                                <img src="../img/user6-128x128.jpg" class="img-circle" alt="咨询用户">
+                                            </div>
+                                            <h4>
+                                                你好！医生
+                                                <small><i class="fa fa-clock-o"></i> 5 分钟前</small>
+                                            </h4>
+                                            <p>这几天身体感觉棒棒的~</p>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="footer"><a href="#">查看所有</a></li>
+                        </ul>
+                    </li>
+
+                    <li class="dropdown user user-menu">
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                            <img src="../img/user8-128x128.jpg" class="user-image" alt="User Image">
+                            <span class="hidden-xs">王医生</span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li class="user-header">
+                                <img src="../img/user8-128x128.jpg" class="img-circle" alt="User Image">
+
+                                <p>
+                                    医生姓名: 王医生
+                                    <small>当前日期: 2019年06月25日</small>
+                                </p>
+                            </li>
+                            <!-- Menu Footer-->
+                            <li class="user-footer">
+                                <div class="pull-left">
+                                    <a href="./settings.html" class="btn btn-default btn-flat">账户设置</a>
+                                </div>
+                                <div class="pull-left reset-ps">
+                                    <a href="./update-pass.html" class="btn btn-default btn-flat">修改密码</a>
+                                </div>
+                                <div class="pull-right">
+                                    <a href="./login.html" class="btn btn-default btn-flat">退出</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--<li>
+                      <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
+                    </li>-->
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <aside class="main-sidebar">
+        <section class="sidebar">
+            <div class="user-panel">
+                <div class="pull-left image">
+                    <img src="../img/user8-128x128.jpg" class="img-circle" alt="User Image">
+                </div>
+                <div class="pull-left info">
+                    <p>王医生</p>
+                    <a href="#"><i class="fa fa-circle text-success"></i> 在线</a>
+                </div>
+            </div>
+
+            <ul class="sidebar-menu" data-widget="tree">
+                <li class="header">菜单</li>
+                <li><a href="./all-message.html"><i class="fa fa-link"></i> <span>咨询列表</span></a></li>
+                <li><a href="#"><i class="fa fa-link"></i> <span>药品管理</span></a></li>
+                <li class="treeview">
+                    <a href="#"><i class="fa fa-link"></i> <span>诊断</span>
+                        <span class="pull-right-container">
+                <i class="fa fa-angle-left pull-right"></i>
+              </span>
+                    </a>
+                    <ul class="treeview-menu">
+                        <li><a href="#">处方单</a></li>
+                        <li><a href="#">结果</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </section>
+    </aside>
+
+    <div class="content-wrapper">
+        <section class="content-header">
+            <h1>
+                咨询列表
+            </h1>
+            <ol class="breadcrumb">
+                <li><a href="./main.html"><i class="fa fa-dashboard"></i> 账户摘要</a></li>
+                <li class="active">咨询列表</li>
+            </ol>
+        </section>
+
+        <!-- 内容 -->
+        <section class="content container-fluid">
+            <div class="row">
+                <!-- 就诊客户记录 -->
+                <div class="col-md-3">
+                    <div class="box box-solid">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">菜单</h3>
+                        </div>
+                        <div class="box-body no-padding">
+                            <ul class="nav nav-pills nav-stacked">
+                                <li class="active"><a href="#"><i class="fa fa-inbox"></i> 未查看消息
+                                    <span class="label label-primary pull-right">12</span></a></li>
+                                <li><a href="#"><i class="fa fa-envelope-o"></i> 已回复消息</a></li>
+                                <li><a href="#"><i class="fa fa-trash-o"></i> 回收站</a></li>
+                            </ul>
+                        </div>
+                        <!-- /.box-body -->
+                    </div>
+                </div>
+                <!-- /.col -->
+                <div class="col-md-9">
+                    <div class="box box-primary">
+                        <div class="box-header with-border">
+                            <h3 class="box-title">未查看消息</h3>
+
+                            <div class="box-tools pull-right">
+                                <div class="has-feedback">
+                                    <input type="text" class="form-control input-sm" placeholder="消息查询">
+                                    <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                                </div>
+                            </div>
+                            <!-- /.box-tools -->
+                        </div>
+                        <!-- /.box-header -->
+                        <div class="box-body no-padding">
+                            <div class="mailbox-controls">
+                                <!-- Check all button -->
+                                <button type="button" class="btn btn-default btn-sm checkbox-toggle"><i class="fa fa-square-o"></i>
+                                </button>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                                </div>
+                                <!-- /.btn-group -->
+                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>
+                                <div class="pull-right">
+                                    1-50/200
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-left"></i></button>
+                                        <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-right"></i></button>
+                                    </div>
+                                    <!-- /.btn-group -->
+                                </div>
+                                <!-- /.pull-right -->
+                            </div>
+                            <div class="table-responsive mailbox-messages">
+                                <table class="table table-hover table-striped">
+                                    <tbody>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+                                        <td class="mailbox-name"><a href="read-mail.html">路人甲</a></td>
+                                        <td class="mailbox-subject"><b>您好!医生</b> 坑爹的西医 ...
+                                        </td>
+                                        <td class="mailbox-attachment"></td>
+                                        <td class="mailbox-date">2019-03-11 11:20</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
+                                        <td class="mailbox-name"><a href="read-mail.html">路人乙</a></td>
+                                        <td class="mailbox-subject"><b>无语的废话</b> 确实讲的 ...
+                                        </td>
+                                        <td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
+                                        <td class="mailbox-date">2019-04-15 12:28</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
+                                        <td class="mailbox-name"><a href="read-mail.html">路人丙</a></td>
+                                        <td class="mailbox-subject"><b>无标题</b> 标题没有 ...
+                                        </td>
+                                        <td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
+                                        <td class="mailbox-date">2019-04-15 12:32</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+                                        <td class="mailbox-name"><a href="read-mail.html">路人丁</a></td>
+                                        <td class="mailbox-subject"><b>没有标题</b>  就是没标题 ...
+                                        </td>
+                                        <td class="mailbox-attachment"></td>
+                                        <td class="mailbox-date">2019-04-15 12:32</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+                                        <td class="mailbox-name"><a href="read-mail.html">无名氏</a></td>
+                                        <td class="mailbox-subject"><b>还是没标题</b> 就是没标题 ...
+                                        </td>
+                                        <td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
+                                        <td class="mailbox-date">2019-04-12 12:09</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
+                                        <td class="mailbox-name"><a href="read-mail.html">没有标题</a></td>
+                                        <td class="mailbox-subject"><b>无题</b> 媒体每天都在放屁，千万不要信 ...
+                                        </td>
+                                        <td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
+                                        <td class="mailbox-date">2019-04-12 12:09</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
+                                        <td class="mailbox-name"><a href="read-mail.html">I'm iron man</a></td>
+                                        <td class="mailbox-subject"><b>我是铁人</b> 开玩笑的 ...
+                                        </td>
+                                        <td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
+                                        <td class="mailbox-date">2019-04-12 12:09</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+                                        <td class="mailbox-name"><a href="read-mail.html">I'm America captain</a></td>
+                                        <td class="mailbox-subject"><b>我是美国队长</b> 就是一个穿星条旗裤衩的傻子 ...
+                                        </td>
+                                        <td class="mailbox-attachment"></td>
+                                        <td class="mailbox-date">2019-04-12 12:09</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+                                        <td class="mailbox-name"><a href="read-mail.html">Spider man</a></td>
+                                        <td class="mailbox-subject"><b>内衣宝宝</b> 天天竞走 ...
+                                        </td>
+                                        <td class="mailbox-attachment"></td>
+                                        <td class="mailbox-date">2019-04-12 12:09</td>
+                                    </tr>
+                                    <tr>
+                                        <td><input type="checkbox"></td>
+                                        <td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
+                                        <td class="mailbox-name"><a href="read-mail.html"> - </a></td>
+                                        <td class="mailbox-subject"><b>计算病毒</b> 不要点开 ...
+                                        </td>
+                                        <td class="mailbox-attachment"></td>
+                                        <td class="mailbox-date">2019-05-08 12:09</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+                                <!-- /.table -->
+                            </div>
+                            <!-- /.mail-box-messages -->
+                        </div>
+                        <!-- /.box-body -->
+                        <div class="box-footer no-padding">
+                            <div class="mailbox-controls">
+                                <!-- Check all button -->
+                                <button type="button" class="btn btn-default btn-sm checkbox-toggle"><i class="fa fa-square-o"></i>
+                                </button>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                                </div>
+                                <!-- /.btn-group -->
+                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>
+                                <div class="pull-right">
+                                    1-20/200
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-left"></i></button>
+                                        <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-right"></i></button>
+                                    </div>
+                                    <!-- /.btn-group -->
+                                </div>
+                                <!-- /.pull-right -->
+                            </div>
+                        </div>
+                    </div>
+                    <!-- /. box -->
+                </div>
+                <!-- /.col -->
+            </div>
+            </div>
+        </section>
+    </div>
+    <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+            当前系统版本 V1.0.0
+        </div>
+        <strong>Copyright &copy; 2019 <a href="#">亦揽工作室</a>.</strong> 版权所有.
+    </footer>
+    <div class="control-sidebar-bg"></div>
+</div>
+<!-- js脚本 -->
+<script src="../framework/jquery/jquery.min.js"></script>
+<script src="../framework/jquery-ui/jquery-ui.min.js"></script>
+<script src="../framework/moment/min/moment.min.js"></script>
+<script src="../framework/bootstrap/js/bootstrap.min.js"></script>
+<script src="../framework/adminlte/dist/js/adminlte.min.js"></script>
+<script src="../framework/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="../framework/iCheck/icheck.min.js"></script>
+<script src="../framework/layer/layer.js"></script>
+<script>
+    $(function(){
+        $('.mailbox-messages input[type="checkbox"]').iCheck({
+            checkboxClass: 'icheckbox_flat-blue',
+            radioClass: 'iradio_flat-blue'
+        });
+        $(".checkbox-toggle").click(function () {
+            var clicks = $(this).data('clicks');
+            if (clicks) {
+                $(".mailbox-messages input[type='checkbox']").iCheck("uncheck");
+                $(".fa", this).removeClass("fa-check-square-o").addClass('fa-square-o');
+            } else {
+                //Check all checkboxes
+                $(".mailbox-messages input[type='checkbox']").iCheck("check");
+                $(".fa", this).removeClass("fa-square-o").addClass('fa-check-square-o');
+            }
+            $(this).data("clicks", !clicks);
+        });
+        $(".mailbox-star").click(function (e) {
+            e.preventDefault();
+            //detect type
+            var $this = $(this).find("a > i");
+            var glyph = $this.hasClass("glyphicon");
+            var fa = $this.hasClass("fa");
+
+            //Switch states
+            if (glyph) {
+                $this.toggleClass("glyphicon-star");
+                $this.toggleClass("glyphicon-star-empty");
+            }
+
+            if (fa) {
+                $this.toggleClass("fa-star");
+                $this.toggleClass("fa-star-o");
+            }
+        });
+    });
+
+    /**
+     * 消息弹出层
+     */
+    function message(){
+        layer.open({
+            type: 2,
+            title: '咨询消息',
+            shadeClose: true,
+            shade: false,
+            maxmin: false, //开启最大化最小化按钮
+            area: ['836px', '478px'],
+            content: './message.html'
+        });
+    }
+</script>
+</body>
+</html>
