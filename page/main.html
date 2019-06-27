@@ -11,6 +11,7 @@
   <link rel="stylesheet" href="../framework/adminlte/dist/css/AdminLTE.min.css">
   <link rel="stylesheet" href="../framework/adminlte/dist/css/skins/skin-blue.min.css">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
+  <link rel="stylesheet" href="../framework/layer/theme/default/layer.css">
   <link rel="stylesheet" href="../css/demo.css">
 </head>
 <body class="hold-transition skin-blue sidebar-mini">
@@ -39,9 +40,10 @@
               <li>
                 <ul class="menu">
                   <li>
-                    <a href="#">
+                    <!-- 调用message函数: param -> 消息ID -->
+                    <a href="javascript:void(0)" onclick="message()">
                       <div class="pull-left">
-                        <img src="../img/user8-128x128.jpg" class="img-circle" alt="User Image">
+                        <img src="../img/user6-128x128.jpg" class="img-circle" alt="咨询用户">
                       </div>
                       <h4>
                         你好！医生
@@ -55,6 +57,7 @@
               <li class="footer"><a href="#">查看所有</a></li>
             </ul>
           </li>
+
           <li class="dropdown user user-menu">
             <a href="#" class="dropdown-toggle" data-toggle="dropdown">
               <img src="../img/user8-128x128.jpg" class="user-image" alt="User Image">
@@ -227,7 +230,7 @@
 
         <!-- 当前账户信息 -->
         <div class="col-md-6">
-          <div class="box box-widget widget-user">
+          <div class="box box-widget widget-user" style="margin: 0;">
             <!-- Add the bg color to the header using any of the bg-* classes -->
             <div class="widget-user-header bg-black" style="background: url('../img/photo1.png') center center;">
               <h3 class="widget-user-username">王医生</h3>
@@ -337,6 +340,7 @@
 <script src="../framework/bootstrap/js/bootstrap.min.js"></script>
 <script src="../framework/adminlte/dist/js/adminlte.min.js"></script>
 <script src="../framework/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+<script src="../framework/layer/layer.js"></script>
 <script>
   $(function(){
     /**
@@ -361,11 +365,24 @@
             height: '387px'
         });*/
       },500);
-
-
     });
-
   });
+
+
+  /**
+   * 消息弹出层
+   */
+  function message(){
+    layer.open({
+      type: 2,
+      title: '咨询消息',
+      shadeClose: true,
+      shade: false,
+      maxmin: false, //开启最大化最小化按钮
+      area: ['836px', '478px'],
+      content: './message.html'
+    });
+  }
 </script>
 </body>
 </html>
