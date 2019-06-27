@@ -209,7 +209,7 @@
                                         <td class="mailbox-name"><a href="#">路人乙</a></td>
                                         <td class="mailbox-subject"><b>无语的废话</b> 确实讲的 ...
                                         </td>
-                                        <td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
+                                        <td class="mailbox-attachment"></td>
                                         <td class="mailbox-date">2019-04-15 12:28</td>
                                     </tr>
                                     <tr>
@@ -218,7 +218,7 @@
                                         <td class="mailbox-name"><a href="#">路人丙</a></td>
                                         <td class="mailbox-subject"><b>无标题</b> 标题没有 ...
                                         </td>
-                                        <td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
+                                        <td class="mailbox-attachment"></td>
                                         <td class="mailbox-date">2019-04-15 12:32</td>
                                     </tr>
                                     <tr>
@@ -236,7 +236,7 @@
                                         <td class="mailbox-name"><a href="#">无名氏</a></td>
                                         <td class="mailbox-subject"><b>还是没标题</b> 就是没标题 ...
                                         </td>
-                                        <td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
+                                        <td class="mailbox-attachment"></td>
                                         <td class="mailbox-date">2019-04-12 12:09</td>
                                     </tr>
                                     <tr>
@@ -245,7 +245,7 @@
                                         <td class="mailbox-name"><a href="#">没有标题</a></td>
                                         <td class="mailbox-subject"><b>无题</b> 媒体每天都在放屁，千万不要信 ...
                                         </td>
-                                        <td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
+                                        <td class="mailbox-attachment"></td>
                                         <td class="mailbox-date">2019-04-12 12:09</td>
                                     </tr>
                                     <tr>
@@ -254,7 +254,7 @@
                                         <td class="mailbox-name"><a href="#">I'm iron man</a></td>
                                         <td class="mailbox-subject"><b>我是铁人</b> 开玩笑的 ...
                                         </td>
-                                        <td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
+                                        <td class="mailbox-attachment"></td>
                                         <td class="mailbox-date">2019-04-12 12:09</td>
                                     </tr>
                                     <tr>
@@ -317,63 +317,62 @@
                 </div>
                 <!-- /.col -->
             </div>
+        </section>
     </div>
-    </section>
-</div>
-<footer class="main-footer">
-    <div class="pull-right hidden-xs">
-        当前系统版本 V1.0.0
+    <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+            当前系统版本 V1.0.0
+        </div>
+        <strong>Copyright &copy; 2019 <a href="#">亦揽工作室</a>.</strong> 版权所有.
+    </footer>
+    <div class="control-sidebar-bg"></div>
     </div>
-    <strong>Copyright &copy; 2019 <a href="#">亦揽工作室</a>.</strong> 版权所有.
-</footer>
-<div class="control-sidebar-bg"></div>
-</div>
-<!-- js脚本 -->
-<script src="../framework/jquery/jquery.min.js"></script>
-<script src="../framework/jquery-ui/jquery-ui.min.js"></script>
-<script src="../framework/moment/min/moment.min.js"></script>
-<script src="../framework/bootstrap/js/bootstrap.min.js"></script>
-<script src="../framework/adminlte/dist/js/adminlte.min.js"></script>
-<script src="../framework/jquery-slimscroll/jquery.slimscroll.min.js"></script>
-<script src="../framework/iCheck/icheck.min.js"></script>
-<script src="../framework/layer/layer.js"></script>
-<script>
-    $(function(){
-        $('.mailbox-messages input[type="checkbox"]').iCheck({
-            checkboxClass: 'icheckbox_flat-blue',
-            radioClass: 'iradio_flat-blue'
-        });
-        $(".checkbox-toggle").click(function () {
-            var clicks = $(this).data('clicks');
-            if (clicks) {
-                $(".mailbox-messages input[type='checkbox']").iCheck("uncheck");
-                $(".fa", this).removeClass("fa-check-square-o").addClass('fa-square-o');
-            } else {
-                //Check all checkboxes
-                $(".mailbox-messages input[type='checkbox']").iCheck("check");
-                $(".fa", this).removeClass("fa-square-o").addClass('fa-check-square-o');
-            }
-            $(this).data("clicks", !clicks);
-        });
-        $(".mailbox-star").click(function (e) {
-            e.preventDefault();
-            //detect type
-            var $this = $(this).find("a > i");
-            var glyph = $this.hasClass("glyphicon");
-            var fa = $this.hasClass("fa");
+    <!-- js脚本 -->
+    <script src="../framework/jquery/jquery.min.js"></script>
+    <script src="../framework/jquery-ui/jquery-ui.min.js"></script>
+    <script src="../framework/moment/min/moment.min.js"></script>
+    <script src="../framework/bootstrap/js/bootstrap.min.js"></script>
+    <script src="../framework/adminlte/dist/js/adminlte.min.js"></script>
+    <script src="../framework/jquery-slimscroll/jquery.slimscroll.min.js"></script>
+    <script src="../framework/iCheck/icheck.min.js"></script>
+    <script src="../framework/layer/layer.js"></script>
+    <script>
+        $(function(){
+            $('.mailbox-messages input[type="checkbox"]').iCheck({
+                checkboxClass: 'icheckbox_flat-blue',
+                radioClass: 'iradio_flat-blue'
+            });
+            $(".checkbox-toggle").click(function () {
+                var clicks = $(this).data('clicks');
+                if (clicks) {
+                    $(".mailbox-messages input[type='checkbox']").iCheck("uncheck");
+                    $(".fa", this).removeClass("fa-check-square-o").addClass('fa-square-o');
+                } else {
+                    //Check all checkboxes
+                    $(".mailbox-messages input[type='checkbox']").iCheck("check");
+                    $(".fa", this).removeClass("fa-square-o").addClass('fa-check-square-o');
+                }
+                $(this).data("clicks", !clicks);
+            });
+            $(".mailbox-star").click(function (e) {
+                e.preventDefault();
+                //detect type
+                var $this = $(this).find("a > i");
+                var glyph = $this.hasClass("glyphicon");
+                var fa = $this.hasClass("fa");
 
-            //Switch states
-            if (glyph) {
-                $this.toggleClass("glyphicon-star");
-                $this.toggleClass("glyphicon-star-empty");
-            }
+                //Switch states
+                if (glyph) {
+                    $this.toggleClass("glyphicon-star");
+                    $this.toggleClass("glyphicon-star-empty");
+                }
 
-            if (fa) {
-                $this.toggleClass("fa-star");
-                $this.toggleClass("fa-star-o");
-            }
+                if (fa) {
+                    $this.toggleClass("fa-star");
+                    $this.toggleClass("fa-star-o");
+                }
+            });
         });
-    });
-</script>
+    </script>
 </body>
 </html>
