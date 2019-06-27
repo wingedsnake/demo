@@ -72,19 +72,6 @@
                                     <small>当前日期: 2019年06月25日</small>
                                 </p>
                             </li>
-                            <!--<li class="user-body">
-                              <div class="row">
-                                <div class="col-xs-4 text-center">
-                                  <a href="#">修改信息</a>
-                                </div>
-                                <div class="col-xs-4 text-center">
-                                  <a href="#"></a>
-                                </div>
-                                <div class="col-xs-4 text-center">
-                                  <a href="#"></a>
-                                </div>
-                              </div>
-                            </li>-->
                             <!-- Menu Footer-->
                             <li class="user-footer">
                                 <div class="pull-left">
@@ -99,9 +86,6 @@
                             </li>
                         </ul>
                     </li>
-                    <!--<li>
-                      <a href="#" data-toggle="control-sidebar"><i class="fa fa-gears"></i></a>
-                    </li>-->
                 </ul>
             </div>
         </nav>
@@ -117,16 +101,6 @@
                     <a href="#"><i class="fa fa-circle text-success"></i> 在线</a>
                 </div>
             </div>
-
-            <!--<form action="#" method="get" class="sidebar-form">
-              <div class="input-group">
-                <input type="text" name="q" class="form-control" placeholder="Search...">
-                <span class="input-group-btn">
-                    <button type="submit" name="search" id="search-btn" class="btn btn-flat"><i class="fa fa-search"></i>
-                    </button>
-                  </span>
-              </div>
-            </form>-->
 
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">菜单</li>
@@ -150,12 +124,12 @@
     <div class="content-wrapper">
         <section class="content-header">
             <h1>
-                账户设置
+                修改密码
                 <small>当前账户</small>
             </h1>
             <ol class="breadcrumb">
                 <li><a href="./main.html"><i class="fa fa-dashboard"></i> 账户摘要</a></li>
-                <li class="active">账户设置</li>
+                <li class="active">修改密码</li>
             </ol>
         </section>
 
@@ -165,18 +139,11 @@
                 <!-- 当前账户信息 -->
                 <div class="account-box">
                     <div class="box box-widget widget-user">
-                        <!-- Add the bg color to the header using any of the bg-* classes -->
-                        <div class="widget-user-header bg-black" style="background: url('../img/photo1.png') center center;">
-                            <div class="box-tools" style="position: absolute;right:5px;top:5px">
-                                <button type="button" id="accountPage" class="btn btn-box-tool" data-toggle="tooltip" title="返回上一页">
-                                    <i class="fa fa-reply"></i></button>
-                            </div>
+                        <div class="widget-user-header bg-aqua-active">
                             <h3 class="widget-user-username">王医生</h3>
-                            <h5 class="widget-user-desc">信息设置</h5>
+                            <h5 class="widget-user-desc">修改密码</h5>
                         </div>
                         <div class="widget-user-image" style="z-index: 900" id="userImg">
-                            <button id="upload" style="color: #fff;position: absolute;top:13px;left: 12px;
-                                    z-index: 991;font-size: 60px;border:0;padding:0;margin:0;background:none" class="fa fa-camera"></button>
                             <img class="img-circle" src="../img/user8-128x128.jpg" alt="User Avatar">
                         </div>
                         <form class="form-horizontal">
@@ -184,25 +151,13 @@
                                 <div class="row" id="accountBox" style="margin-top:36px">
                                     <div class="col-sm-12">
                                         <!-- 账户信息体 -->
-                                        <!-- 账户登录名-start -->
-                                        <div class="row">
-                                            <div class="col-sm-11">
-                                                <div class="form-group">
-                                                    <label class="col-sm-2 control-label" style="padding-right: 10px">登录名</label>
-                                                    <div class="col-sm-10">
-                                                        <span class="form-control border-white" style="padding-left:0">wang_mist</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- 账户登录名-end -->
                                         <!-- 医师姓名-start -->
                                         <div class="row">
                                             <div class="col-sm-11">
                                                 <div class="form-group">
-                                                    <label class="col-sm-2 control-label">姓 名</label>
+                                                    <label class="col-sm-2 control-label">原密码</label>
                                                     <div class="col-sm-10">
-                                                        <input type="text" style="width:100%"  class="form-control" value="王健林" placeholder="请输入真实姓名"/>
+                                                        <input type="password" style="width:100%"  class="form-control" value="" placeholder="请输入当前密码"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -212,12 +167,9 @@
                                         <div class="row">
                                             <div class="col-sm-11">
                                                 <div class="form-group">
-                                                    <label class="col-sm-2 control-label">性 别</label>
+                                                    <label class="col-sm-2 control-label">新密码</label>
                                                     <div class="col-sm-10">
-                                                        <select class="form-control select2" style="width: 100%;">
-                                                            <option selected="selected" value="0">男</option>
-                                                            <option value="1">女</option>
-                                                        </select>
+                                                        <input type="password" style="width:100%"  class="form-control" value="" placeholder="请输入新密码"/>
                                                     </div>
                                                 </div>
                                             </div>
@@ -227,96 +179,19 @@
                                         <div class="row">
                                             <div class="col-sm-11">
                                                 <div class="form-group">
-                                                    <label class="col-sm-2 control-label">编 号</label>
+                                                    <label class="col-sm-2 control-label" style="padding-right: 7px">密码确认</label>
                                                     <div class="col-sm-10">
-                                                        <span class="form-control border-white" style="padding-left: 0">CH12306-11</span>
+                                                        <input type="password" style="width:100%"  class="form-control" value="" placeholder="确认新密码"/>
                                                     </div>
                                                 </div>
                                             </div>
                                         </div>
                                         <!-- 医师编号-end -->
-                                        <!-- 入职时间-start -->
-                                        <div class="row">
-                                            <div class="col-sm-11">
-                                                <div class="form-group">
-                                                    <label class="col-sm-2 control-label" style="padding-right: 2px">入职时间</label>
-                                                    <div class="col-sm-10">
-                                                        <span class="form-control border-white" style="padding-left:0">2019年6月12日</span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- 入职时间-end -->
-                                        <!-- 医师年龄-start -->
-                                        <div class="row">
-                                            <div class="col-sm-11">
-                                                <div class="form-group">
-                                                    <label class="col-sm-2 control-label">年 龄</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="text" class="form-control" style="width: 100%" value="42" placeholder="请输入真实年龄"/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- 医师年龄-end -->
-                                        <!-- 医师科室-start -->
-                                        <div class="row">
-                                            <div class="col-sm-11">
-                                                <div class="form-group">
-                                                    <label class="col-sm-2 control-label">科 室</label>
-                                                    <div class="col-sm-10">
-                                                        <select class="form-control select2 categroy" style="width: 100%;">
-                                                            <option selected="selected">中医养生</option>
-                                                            <option>艾灸科</option>
-                                                        </select>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-
-                                        <!-- 医师科室-end -->
-                                        <!-- 医师EMAIL邮箱-start -->
-                                        <div class="row">
-                                            <div class="col-sm-11">
-                                                <div class="form-group">
-                                                    <label class="col-sm-2 control-label" style="padding-right: 2px">电子邮箱</label>
-                                                    <div class="col-sm-10">
-                                                        <input type="text" class="form-control" style="width: 100%" value="zj13656800820@aliyun.com" placeholder="请输入EMAIL邮箱号"/>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- 医师EMAIL邮箱-end -->
-                                        <!-- 医师联系住址-start -->
-                                        <div class="row">
-                                            <div class="col-sm-11">
-                                                <div class="form-group">
-                                                    <label class="col-sm-2 control-label" style="padding-right: 0">联系住址</label>
-                                                    <div class="col-sm-10">
-                                                        <textarea class="form-control" placeholder="请输入可联系住址"></textarea>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- 医师联系住址-end -->
-                                        <!--医师备注-start -->
-                                        <div class="row">
-                                            <div class="col-sm-11">
-                                                <div class="form-group">
-                                                    <label class="col-sm-2 control-label" style="padding-right: 0">备 注</label>
-                                                    <div class="col-sm-10">
-                                                        <textarea class="form-control"></textarea>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- 医师备注-end -->
-                                        <div style="height: 30px"></div><!-- 滚动条有个BUG，暂未解决 -->
                                     </div>
                                 </div>
                             </div>
                             <div class="box-footer text-center padding-10">
-                                <button class="btn btn-primary">信息保存</button>
+                                <button class="btn btn-primary">密码修改</button>
                             </div>
                         </form>
                     </div>
@@ -342,26 +217,7 @@
 <script src="../framework/iCheck/icheck.min.js"></script>
 <script src="../framework/select2/dist/js/select2.min.js"></script>
 <script>
-    $(function(){
-        //内容滚动条
-        $("#accountBox").slimScroll({
-            height: '330px',
-        });
-
-        //select2插件初始化
-        $('.select2').select2({
-            minimumResultsForSearch: -1
-        })
-
-       //科室不需要去除查询
-       $(".categroy").select2();
-
-        //返回上一页
-        $("#accountPage").click(function(){
-            window.location.href = "./account.html";
-        });
-
-    });
+    // ... submit
 </script>
 </body>
 </html>
