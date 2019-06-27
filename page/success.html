@@ -16,8 +16,14 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
     <link rel="stylesheet" href="../css/login.css">
     <style type="text/css">
+        .login-box-body{
+            background: none;
+        }
         .login-page, .register-page{
             background: #eef1f7;
+        }
+        .reback{
+            margin-top:12px;
         }
     </style>
 </head>
@@ -26,29 +32,20 @@
 <!-- 登录开始 -->
 <div class="login-box">
     <div class="login-logo">
-        <a href="#"><b>修改</b>-密码</a>
+        <a href="#" class="text-green"><i class="fa  fa-check-square"></i>&nbsp;&nbsp;<b>修改成功</b></a>
     </div>
-    <div class="login-box-body">
-        <!--<p class="login-box-msg">密码修改</p>-->
+    <div class="login-box-body text-center">
+        <div class="row">
+            <div class="col-sm-12">
+                <b class="h3" style="font-weight: 100">SUCCESS</b>
+            </div>
 
-        <form action="./success.html" method="post">
-            <div class="form-group has-feedback">
-                <input type="password" class="form-control" placeholder="要修改的密码">
-                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-            </div>
-            <div class="form-group has-feedback">
-                <input type="password" class="form-control" placeholder="再次确认密码">
-                <span class="glyphicon glyphicon-lock form-control-feedback"></span>
-            </div>
-            <div class="form-group">
-                <input type="text" class="form-control" placeholder="请输入邮件中的确认码">
-            </div>
-            <div class="row">
-                <div class="col-xs-12">
-                    <button type="submit" class="btn btn-primary btn-block btn-flat">确认修改</button>
-                </div>
-            </div>
-        </form>
+        </div>
+    </div>
+    <div>
+        <div class="reback text-center">
+            <a href="./login.html">返回登录页</a>
+        </div>
     </div>
 </div>
 
