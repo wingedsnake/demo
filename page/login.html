@@ -15,6 +15,22 @@
     <link rel="stylesheet" href="../framework/iCheck/square/blue.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700,300italic,400italic,600italic">
     <link rel="stylesheet" href="../css/login.css">
+    <style type="text/css">
+        .layui-layer-btn .layui-layer-btn0{
+            background-color: #3c8dbc!important;
+            border-color: #367fa9!important;
+            padding-bottom: 28px!important;
+            border-radius: 0!important;
+            color:#fff!important;
+        }
+        .layui-layer-content{
+            text-align: center!important;
+        }
+        .layui-layer-btn{
+            text-align: center!important;
+            padding: 0 12px 12px!important;
+        }
+    </style>
 </head>
 <body class="hold-transition login-page">
 
@@ -30,13 +46,13 @@
     <div class="login-box-body">
         <p class="login-box-msg">后台登录</p>
 
-        <form action="./main.html" method="post">
+        <form id="loginForm" action="./main.html" method="post">
             <div class="form-group has-feedback">
-                <input type="text" class="form-control" placeholder="登录名">
+                <input type="text" class="form-control" name="loginname" placeholder="登录名">
                 <span class="glyphicon glyphicon-user form-control-feedback"></span>
             </div>
             <div class="form-group has-feedback">
-                <input type="password" class="form-control" placeholder="登录密码">
+                <input type="password" class="form-control" name="password" placeholder="登录密码">
                 <span class="glyphicon glyphicon-lock form-control-feedback"></span>
             </div>
             <div class="row">
@@ -53,7 +69,7 @@
                     </div>
                 </div>
                 <div class="col-xs-4">
-                    <button type="submit" class="btn btn-primary btn-block btn-flat">登录</button>
+                    <button id="loginTo" type="submit" class="btn btn-primary btn-block btn-flat">登录</button>
                 </div>
             </div>
         </form>
@@ -64,6 +80,7 @@
 <script src="../framework/bootstrap/js/bootstrap.min.js"></script>
 <script src="../framework/adminlte/dist/js/adminlte.min.js"></script>
 <script src="../framework/iCheck/icheck.min.js"></script>
+<script src="../framework/layer/layer.js"></script>
 
 <script>
     $(function(){
@@ -72,6 +89,39 @@
             radioClass: 'iradio_square-blue',
             increaseArea: '20%'
         });
+
+        /**
+         * 点击登录
+         */
+        $("#loginTo").click(function(e){
+            e.stopPropagation();
+            e.preventDefault();
+
+            var loginname_val = $("input[name='loginname']").val();
+            var password_val = $("input[name='password']").val();
+
+            if(loginname_val === "" || password_val === ""){
+
+                layer.alert('密码或用户名不能为空', {
+                    title:'<span style="color: #eebd44" class="fa fa-exclamation-triangle"></span> 警告',
+                    time: 3000,
+                    closeBtn:0,
+                    btn: ['关闭']
+                });
+
+            }else if(loginname_val === "yilan" && password_val === "admin"){
+                $("#loginForm").submit();
+            }else{
+                layer.alert('密码或用户名错误', {
+                    title:'<span style="color: #bb2432" class="fa fa-times-circle"></span> <font color="#bb2432">错误</font>',
+                    time: 3000,
+                    closeBtn:0,
+                    btn: ['关闭']
+                });
+                return;
+            }
+        });
+
     });
 </script>
 </body>
