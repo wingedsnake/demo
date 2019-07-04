@@ -58,7 +58,9 @@
 <script>
     $(function(){
         $("#next").click(function(e){
-            event.preventDefault();
+            e.stopPropagation();
+            e.preventDefault();
+
             var email = $("#email").val();
             if(email != "" && /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/.test(email)){
                 $("form").submit();
