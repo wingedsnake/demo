@@ -54,17 +54,21 @@
 </div>
 <script src="../framework/jquery/jquery.min.js"></script>
 <script src="../framework/bootstrap/js/bootstrap.min.js"></script>
+<script src="../framework/layer/layer.js"></script>
 <script>
     $(function(){
         $("#next").click(function(e){
             event.preventDefault();
             var email = $("#email").val();
-            if(email != ""){
+            if(email != "" && /^([a-zA-Z0-9_-])+@([a-zA-Z0-9_-])+((\.[a-zA-Z0-9_-]{2,3}){1,2})$/.test(email)){
                 $("form").submit();
             }else{
                 $(".lockscreen-item").css({
                     border:'1px solid #dc1b1b'
                 });
+
+                layer.tips('未输入EMAIL或EMAIL格式错误', '.lockscreen-credentials');
+
             }
         });
     });
