@@ -42,7 +42,7 @@
                                 <ul class="menu">
                                     <li>
                                         <!-- 调用message函数: param -> 消息ID -->
-                                        <a href="javascript:void(0)" onclick="message()">
+                                        <a href="./check.html">
                                             <div class="pull-left">
                                                 <img src="../img/user6-128x128.jpg" class="img-circle" alt="咨询用户">
                                             </div>
@@ -55,7 +55,7 @@
                                     </li>
                                 </ul>
                             </li>
-                            <li class="footer"><a href="message.html">查看所有</a></li>
+                            <li class="footer"><a href="./message.html">查看所有</a></li>
                         </ul>
                     </li>
 
@@ -108,7 +108,7 @@
 
             <ul class="sidebar-menu" data-widget="tree">
                 <li class="header">菜单</li>
-                <li class="active"><a href="message.html"><i class="fa fa-link"></i> <span>咨询列表</span></a></li>
+                <li class="active"><a href="./message.html"><i class="fa fa-link"></i> <span>咨询列表</span></a></li>
                 <li><a href="#"><i class="fa fa-link"></i> <span>药品管理</span></a></li>
                 <li class="treeview">
                     <a href="#"><i class="fa fa-link"></i> <span>诊断</span>
@@ -138,124 +138,750 @@
 
         <!-- 内容 -->
         <section class="content container-fluid">
+            <!-- 选项卡页面-start -->
             <div class="row">
-                <!-- 就诊客户记录 -->
-                <div class="col-md-3">
-                    <div class="box box-solid">
-                        <div class="box-header with-border">
-                            <h3 class="box-title">菜单</h3>
-                        </div>
-                        <div class="box-body no-padding">
-                            <ul class="nav nav-pills nav-stacked">
-                                <li><a href="./message.html"><i class="fa fa-inbox"></i> 未查看消息
-                                    <span class="label label-primary pull-right">12</span></a></li>
-                                <li><a href="./replied.html"><i class="fa fa-envelope-o"></i> 已回复消息</a></li>
-                                <li><a href="./groups.html"><i class="fa fa-group"></i> 按客户分组</a></li>
-                                <li><a href="./trash.html"><i class="fa fa-trash-o"></i> 回收站</a></li>
-                            </ul>
-                        </div>
-                        <!-- /.box-body -->
-                    </div>
-                </div>
-                <!-- /.col -->
-                <div class="col-md-9">
-                    <div class="box box-primary">
-                        <div class="box-header with-border">
-                            <h3 class="box-title">查看消息</h3>
-                        </div>
-                        <!-- /.box-header -->
-                        <div class="box-body no-padding">
-                            <div class="box box-widget" style="margin-bottom: 0">
-                                <div class="box-header with-border">
-                                    <div class="user-block">
-                                        <img class="img-circle" src="../img/user6-128x128.jpg" alt="路人甲">
-                                        <span class="username"><a href="#">路人甲</a></span>
+                <div class="col-md-12">
+                    <!-- Custom Tabs -->
+                    <div class="nav-tabs-custom">
+                        <ul class="nav nav-tabs">
+                            <li><a href="#not_look" data-toggle="tab">
+                                <i class="fa fa-inbox"></i> 未查看消息 &nbsp; <span class="label label-primary pull-right">12</span>
+                            </a>
+                            </li>
+                            <li><a href="#look_up" data-toggle="tab"><i class="fa fa-envelope-o"></i> 已回复消息</a></a></li>
+                            <li><a href="#group" data-toggle="tab"><i class="fa fa-group"></i> 按客户分组</a></a></li>
+                            <li><a href="#trash" data-toggle="tab"><i class="fa fa-trash-o"></i> 回收站</a></a></li>
+                        </ul>
+                        <div class="tab-content">
+                            <!-- 未查看消息-start -->
+                            <div class="tab-pane" id="not_look">
 
-                                        <span class="description">2019-06-11 11:00</span>
+                                <!-- 查询-start -->
+                                <div class="box-header with-border">
+                                    <h3 class="box-title">未查看消息</h3>
+
+                                    <div class="box-tools pull-right">
+                                        <div class="has-feedback">
+                                            <input type="text" class="form-control input-sm" placeholder="消息查询">
+                                            <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                                        </div>
                                     </div>
-                                    <div class="box-tools">
-                                        <button class="btn btn-default btn-sm" onclick="history.go(-1)" title="返回上一页">
-                                            <i class="fa fa-reply"></i>
-                                        </button>
-                                        <button class="btn btn-default btn-sm">
-                                            <i class="fa fa-refresh"></i>
-                                        </button>
+                                </div>
+                                <!-- 查询-end -->
+
+                                <div class="mailbox-controls">
+                                    <button type="button" class="btn btn-default btn-sm checkbox-toggle"><i class="fa fa-square-o"></i>
+                                    </button>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
                                     </div>
+                                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>
+                                    <div class="pull-right">
+                                        1-20/200
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-left"></i></button>
+                                            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-right"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 主体列表-start -->
+                                <div class="table-responsive mailbox-messages">
+                                    <table class="table table-hover table-striped">
+                                        <tbody>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+                                            <td class="mailbox-name"><a href="./check.html">路人甲</a></td>
+                                            <td class="mailbox-subject"><b>您好!医生</b> 坑爹的西医 ...
+                                            </td>
+                                            <td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
+                                            <td class="mailbox-date">2019-03-11 11:20</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
+                                            <td class="mailbox-name"><a href="#">路人乙</a></td>
+                                            <td class="mailbox-subject"><b>无语的废话</b> 确实讲的 ...
+                                            </td>
+                                            <td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
+                                            <td class="mailbox-date">2019-04-15 12:28</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
+                                            <td class="mailbox-name"><a href="#">路人丙</a></td>
+                                            <td class="mailbox-subject"><b>无标题</b> 标题没有 ...
+                                            </td>
+                                            <td class="mailbox-attachment"></td>
+                                            <td class="mailbox-date">2019-04-15 12:32</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+                                            <td class="mailbox-name"><a href="#">路人丁</a></td>
+                                            <td class="mailbox-subject"><b>没有标题</b>  就是没标题 ...
+                                            </td>
+                                            <td class="mailbox-attachment"></td>
+                                            <td class="mailbox-date">2019-04-15 12:32</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+                                            <td class="mailbox-name"><a href="#">无名氏</a></td>
+                                            <td class="mailbox-subject"><b>还是没标题</b> 就是没标题 ...
+                                            </td>
+                                            <td class="mailbox-attachment"></td>
+                                            <td class="mailbox-date">2019-04-12 12:09</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
+                                            <td class="mailbox-name"><a href="#">没有标题</a></td>
+                                            <td class="mailbox-subject"><b>无题</b> 媒体每天都在放屁，千万不要信 ...
+                                            </td>
+                                            <td class="mailbox-attachment"></td>
+                                            <td class="mailbox-date">2019-04-12 12:09</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
+                                            <td class="mailbox-name"><a href="#">I'm iron man</a></td>
+                                            <td class="mailbox-subject"><b>我是铁人</b> 开玩笑的 ...
+                                            </td>
+                                            <td class="mailbox-attachment"></td>
+                                            <td class="mailbox-date">2019-04-12 12:09</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+                                            <td class="mailbox-name"><a href="#">I'm America captain</a></td>
+                                            <td class="mailbox-subject"><b>我是美国队长</b> 就是一个穿星条旗裤衩的傻子 ...
+                                            </td>
+                                            <td class="mailbox-attachment"></td>
+                                            <td class="mailbox-date">2019-04-12 12:09</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+                                            <td class="mailbox-name"><a href="#">Spider man</a></td>
+                                            <td class="mailbox-subject"><b>内衣宝宝</b> 天天竞走 ...
+                                            </td>
+                                            <td class="mailbox-attachment"></td>
+                                            <td class="mailbox-date">2019-04-12 12:09</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
+                                            <td class="mailbox-name"><a href="#"> - </a></td>
+                                            <td class="mailbox-subject"><b>计算病毒</b> 不要点开 ...
+                                            </td>
+                                            <td class="mailbox-attachment"></td>
+                                            <td class="mailbox-date">2019-05-08 12:09</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- 主题列表-end -->
+
+                                <div class="box-footer no-padding">
+                                    <div class="mailbox-controls">
+                                        <button type="button" class="btn btn-default btn-sm checkbox-toggle"><i class="fa fa-square-o"></i>
+                                        </button>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                                        </div>
+                                        <button type="button" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>
+                                        <div class="pull-right">
+                                            1-20/200
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-left"></i></button>
+                                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-right"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 未查看消息-end -->
+                            <!-- 未查看消息-start -->
+                            <div class="tab-pane" id="look_up">
+
+                                <!-- 查询-start -->
+                                <div class="box-header with-border">
+                                    <h3 class="box-title">已回复消息</h3>
+
+                                    <div class="box-tools pull-right">
+                                        <div class="has-feedback">
+                                            <input type="text" class="form-control input-sm" placeholder="消息查询">
+                                            <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 查询-end -->
+
+                                <div class="mailbox-controls">
+                                    <button type="button" class="btn btn-default btn-sm checkbox-toggle"><i class="fa fa-square-o"></i>
+                                    </button>
+                                    <div class="btn-group">
+                                        <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                                    </div>
+                                    <button type="button" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>
+                                    <div class="pull-right">
+                                        1-20/200
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-left"></i></button>
+                                            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-right"></i></button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 主体列表-start -->
+                                <div class="table-responsive mailbox-messages">
+                                    <table class="table table-hover table-striped">
+                                        <tbody>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+                                            <td class="mailbox-name"><a href="./check.html">路人甲</a></td>
+                                            <td class="mailbox-subject"><b>您好!医生</b> 坑爹的西医 ...
+                                            </td>
+                                            <td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
+                                            <td class="mailbox-date">2019-03-11 11:20</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
+                                            <td class="mailbox-name"><a href="#">路人乙</a></td>
+                                            <td class="mailbox-subject"><b>无语的废话</b> 确实讲的 ...
+                                            </td>
+                                            <td class="mailbox-attachment"><i class="fa fa-paperclip"></i></td>
+                                            <td class="mailbox-date">2019-04-15 12:28</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
+                                            <td class="mailbox-name"><a href="#">路人丙</a></td>
+                                            <td class="mailbox-subject"><b>无标题</b> 标题没有 ...
+                                            </td>
+                                            <td class="mailbox-attachment"></td>
+                                            <td class="mailbox-date">2019-04-15 12:32</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+                                            <td class="mailbox-name"><a href="#">路人丁</a></td>
+                                            <td class="mailbox-subject"><b>没有标题</b>  就是没标题 ...
+                                            </td>
+                                            <td class="mailbox-attachment"></td>
+                                            <td class="mailbox-date">2019-04-15 12:32</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+                                            <td class="mailbox-name"><a href="#">无名氏</a></td>
+                                            <td class="mailbox-subject"><b>还是没标题</b> 就是没标题 ...
+                                            </td>
+                                            <td class="mailbox-attachment"></td>
+                                            <td class="mailbox-date">2019-04-12 12:09</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
+                                            <td class="mailbox-name"><a href="#">没有标题</a></td>
+                                            <td class="mailbox-subject"><b>无题</b> 媒体每天都在放屁，千万不要信 ...
+                                            </td>
+                                            <td class="mailbox-attachment"></td>
+                                            <td class="mailbox-date">2019-04-12 12:09</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
+                                            <td class="mailbox-name"><a href="#">I'm iron man</a></td>
+                                            <td class="mailbox-subject"><b>我是铁人</b> 开玩笑的 ...
+                                            </td>
+                                            <td class="mailbox-attachment"></td>
+                                            <td class="mailbox-date">2019-04-12 12:09</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+                                            <td class="mailbox-name"><a href="#">I'm America captain</a></td>
+                                            <td class="mailbox-subject"><b>我是美国队长</b> 就是一个穿星条旗裤衩的傻子 ...
+                                            </td>
+                                            <td class="mailbox-attachment"></td>
+                                            <td class="mailbox-date">2019-04-12 12:09</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+                                            <td class="mailbox-name"><a href="#">Spider man</a></td>
+                                            <td class="mailbox-subject"><b>内衣宝宝</b> 天天竞走 ...
+                                            </td>
+                                            <td class="mailbox-attachment"></td>
+                                            <td class="mailbox-date">2019-04-12 12:09</td>
+                                        </tr>
+                                        <tr>
+                                            <td><input type="checkbox"></td>
+                                            <td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
+                                            <td class="mailbox-name"><a href="#"> - </a></td>
+                                            <td class="mailbox-subject"><b>计算病毒</b> 不要点开 ...
+                                            </td>
+                                            <td class="mailbox-attachment"></td>
+                                            <td class="mailbox-date">2019-05-08 12:09</td>
+                                        </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                                <!-- 主题列表-end -->
+
+                                <div class="box-footer no-padding">
+                                    <div class="mailbox-controls">
+                                        <button type="button" class="btn btn-default btn-sm checkbox-toggle"><i class="fa fa-square-o"></i>
+                                        </button>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                                        </div>
+                                        <button type="button" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>
+                                        <div class="pull-right">
+                                            1-20/200
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-left"></i></button>
+                                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-right"></i></button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <!-- 未查看消息-end -->
+                            <!-- 按客户分组-start -->
+                            <div class="tab-pane" id="group">
+                                <div class="box-header with-border">
+                                    <h3 class="box-title">客户分组</h3>
+                                    <div class="box-tools pull-right">
+                                        <div class="has-feedback">
+                                            <input type="text" class="form-control input-sm" placeholder="客户查询">
+                                            <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                                        </div>
+                                    </div>
+                                    <!-- /.box-tools -->
                                 </div>
                                 <!-- /.box-header -->
-                                <div class="box-body">
-                                    <h4>中医理论 - <small>完善的中医历史</small></h4>
-                                    <!-- post text -->
-                                    <p>中医理论来源于对医疗经验的总结及中国古代的阴阳五行思想。其内容包括精气学说、阴阳五行学说、
-                                        气血津液、藏象、经络、体质、病因、发病、病机、治则、养生等。早在两千多年前，
-                                        中医专著《黄帝内经》问世，奠定了中医学的基础。时至今日，中国传统医学相关的理论、
-                                        诊断法、治疗方法等，均可在此书中找到根源。</p>
-
-                                    <p>中医学理论体系是经过长期的临床实践，在唯物论和辨证法思想指导下
-                                        逐步形成的，它来源于实践，反过来又指导实践。通过对现象的分析，
-                                        以探求其内在机理。</p>
+                                <div class="box-body no-padding">
+                                    <div class="mailbox-controls">
+                                        <button type="button" class="btn btn-default btn-sm checkbox-toggle">
+                                            <i class="fa fa-square-o"></i>
+                                        </button>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                                        </div>
+                                        <!-- /.btn-group -->
+                                        <button type="button" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>
+                                        <div class="pull-right">
+                                            1-20/200
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-left"></i></button>
+                                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-right"></i></button>
+                                            </div>
+                                            <!-- /.btn-group -->
+                                        </div>
+                                        <!-- /.pull-right -->
+                                    </div>
+                                    <div class="table-responsive mailbox-messages">
+                                        <table class="table table-hover table-striped products-list product-list-in-box">
+                                            <tbody>
+                                            <tr>
+                                                <td><input type="checkbox"></td>
+                                                <td class="item">
+                                                    <div class="product-img">
+                                                        <img src="../img/user1-128x128.jpg" alt="客户1">
+                                                    </div>
+                                                    <div class="product-info">
+                                                        <a href="./self-msg.html" class="product-title">
+                                                            路人甲
+                                                            <span class="label label-danger pull-right">20</span>
+                                                        </a>
+                                                        <span class="product-description">
+                                                    疯狂乱舞之舞狮。
+                                                </span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox"></td>
+                                                <td class="item">
+                                                    <div class="product-img">
+                                                        <img src="../img/user6-128x128.jpg" alt="客户2">
+                                                    </div>
+                                                    <div class="product-info">
+                                                        <a href="#" class="product-title">
+                                                            路人乙
+                                                            <span class="label label-danger pull-right">12</span>
+                                                        </a>
+                                                        <span class="product-description">
+                                                    一般指以中国汉族劳动人民创造的传统医学为主...
+                                                </span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox"></td>
+                                                <td class="item">
+                                                    <div class="product-img">
+                                                        <img src="../img/user2-160x160.jpg" alt="客户2">
+                                                    </div>
+                                                    <div class="product-info">
+                                                        <a href="#" class="product-title">
+                                                            路人丙
+                                                            <span class="label label-danger pull-right">6</span>
+                                                        </a>
+                                                        <span class="product-description">
+                                                    网上寻医问药有风险，就医问诊请到正规医院...
+                                                </span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox"></td>
+                                                <td class="item">
+                                                    <div class="product-img">
+                                                        <img src="../img/user3-128x128.jpg" alt="客户2">
+                                                    </div>
+                                                    <div class="product-info">
+                                                        <a href="#" class="product-title">
+                                                            路人丁
+                                                            <span class="label label-danger pull-right">1</span>
+                                                        </a>
+                                                        <span class="product-description">
+                                                    中医频道传承中医国粹，传播中医药文化...
+                                                </span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox"></td>
+                                                <td class="item">
+                                                    <div class="product-img">
+                                                        <img src="../img/user4-128x128.jpg" alt="客户2">
+                                                    </div>
+                                                    <div class="product-info">
+                                                        <a href="#" class="product-title">
+                                                            路人X
+                                                            <span class="label label-danger pull-right">8</span>
+                                                        </a>
+                                                        <span class="product-description">
+                                                    2018年10月1日，世界卫生组织首次...
+                                                </span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox"></td>
+                                                <td class="item">
+                                                    <div class="product-img">
+                                                        <img src="../img/user5-128x128.jpg" alt="客户2">
+                                                    </div>
+                                                    <div class="product-info">
+                                                        <a href="#" class="product-title">
+                                                            路人Y
+                                                            <span class="label label-danger pull-right">8</span>
+                                                        </a>
+                                                        <span class="product-description">
+                                                    自清朝末年，中国受西方列强侵略，国运衰弱。
+                                                </span>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <!-- /.table -->
+                                    </div>
+                                    <!-- /.mail-box-messages -->
                                 </div>
                                 <!-- /.box-body -->
-                                <div class="box-footer box-comments">
-                                    <div class="box-comment">
-                                        <!-- User image -->
-                                        <img class="img-circle img-sm" src="../img/user8-128x128.jpg" alt="王医生">
+                                <div class="box-footer no-padding">
+                                    <div class="mailbox-controls">
+                                        <button type="button" class="btn btn-default btn-sm checkbox-toggle">
+                                            <i class="fa fa-square-o"></i>
+                                        </button>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-trash-o"></i></button>
+                                        </div>
+                                        <!-- /.btn-group -->
+                                        <button type="button" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>
+                                        <div class="pull-right">
+                                            1-20/200
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-left"></i></button>
+                                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-right"></i></button>
+                                            </div>
+                                            <!-- /.btn-group -->
+                                        </div>
+                                        <!-- /.pull-right -->
+                                    </div>
+                                </div>
 
-                                        <div class="comment-text">
+                            </div>
+                            <!-- 按客户分组-end -->
+                            <!-- 回收站-start -->
+                            <div class="tab-pane" id="trash">
+
+                                <div class="box-header with-border">
+                                    <h3 class="box-title">回收站 - <small><b>30</b>天后自动清理</small></h3>
+
+                                    <div class="box-tools pull-right">
+                                        <div class="has-feedback">
+                                            <input type="text" class="form-control input-sm" placeholder="消息查询">
+                                            <span class="glyphicon glyphicon-search form-control-feedback"></span>
+                                        </div>
+                                    </div>
+                                    <!-- /.box-tools -->
+                                </div>
+                                <!-- /.box-header -->
+                                <div class="box-body no-padding">
+                                    <div class="mailbox-controls">
+                                        <!-- Check all button -->
+                                        <button type="button" class="btn btn-default btn-sm checkbox-toggle"><i class="fa fa-square-o"></i>
+                                        </button>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-remove"></i></button>
+                                        </div>
+                                        <!-- /.btn-group -->
+                                        <button type="button" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>
+                                        <div class="pull-right">
+                                            1-20/200
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-left"></i></button>
+                                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-right"></i></button>
+                                            </div>
+                                            <!-- /.btn-group -->
+                                        </div>
+                                        <!-- /.pull-right -->
+                                    </div>
+                                    <div class="table-responsive mailbox-messages">
+                                        <table class="table table-hover table-striped">
+                                            <tbody>
+                                            <tr>
+                                                <td><input type="checkbox"></td>
+                                                <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+                                                <td class="mailbox-name"><a href="./check.html">路人甲</a></td>
+                                                <td class="mailbox-subject"><b>您好!医生</b> 坑爹的西医 ...
+                                                </td>
+                                                <td class="mailbox-attachment"></td>
+                                                <td class="mailbox-date">2019-03-11 11:20</td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox"></td>
+                                                <td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
+                                                <td class="mailbox-name"><a href="#">路人乙</a></td>
+                                                <td class="mailbox-subject"><b>无语的废话</b> 确实讲的 ...
+                                                </td>
+                                                <td class="mailbox-attachment"></td>
+                                                <td class="mailbox-date">2019-04-15 12:28</td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox"></td>
+                                                <td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
+                                                <td class="mailbox-name"><a href="#">路人丙</a></td>
+                                                <td class="mailbox-subject"><b>无标题</b> 标题没有 ...
+                                                </td>
+                                                <td class="mailbox-attachment"></td>
+                                                <td class="mailbox-date">2019-04-15 12:32</td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox"></td>
+                                                <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+                                                <td class="mailbox-name"><a href="#">路人丁</a></td>
+                                                <td class="mailbox-subject"><b>没有标题</b>  就是没标题 ...
+                                                </td>
+                                                <td class="mailbox-attachment"></td>
+                                                <td class="mailbox-date">2019-04-15 12:32</td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox"></td>
+                                                <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+                                                <td class="mailbox-name"><a href="#">无名氏</a></td>
+                                                <td class="mailbox-subject"><b>还是没标题</b> 就是没标题 ...
+                                                </td>
+                                                <td class="mailbox-attachment"></td>
+                                                <td class="mailbox-date">2019-04-12 12:09</td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox"></td>
+                                                <td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
+                                                <td class="mailbox-name"><a href="#">没有标题</a></td>
+                                                <td class="mailbox-subject"><b>无题</b> 媒体每天都在放屁，千万不要信 ...
+                                                </td>
+                                                <td class="mailbox-attachment"></td>
+                                                <td class="mailbox-date">2019-04-12 12:09</td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox"></td>
+                                                <td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
+                                                <td class="mailbox-name"><a href="#">I'm iron man</a></td>
+                                                <td class="mailbox-subject"><b>我是铁人</b> 开玩笑的 ...
+                                                </td>
+                                                <td class="mailbox-attachment"></td>
+                                                <td class="mailbox-date">2019-04-12 12:09</td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox"></td>
+                                                <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+                                                <td class="mailbox-name"><a href="#">I'm America captain</a></td>
+                                                <td class="mailbox-subject"><b>我是美国队长</b> 就是一个穿星条旗裤衩的傻子 ...
+                                                </td>
+                                                <td class="mailbox-attachment"></td>
+                                                <td class="mailbox-date">2019-04-12 12:09</td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox"></td>
+                                                <td class="mailbox-star"><a href="#"><i class="fa fa-star text-yellow"></i></a></td>
+                                                <td class="mailbox-name"><a href="#">Spider man</a></td>
+                                                <td class="mailbox-subject"><b>内衣宝宝</b> 天天竞走 ...
+                                                </td>
+                                                <td class="mailbox-attachment"></td>
+                                                <td class="mailbox-date">2019-04-12 12:09</td>
+                                            </tr>
+                                            <tr>
+                                                <td><input type="checkbox"></td>
+                                                <td class="mailbox-star"><a href="#"><i class="fa fa-star-o text-yellow"></i></a></td>
+                                                <td class="mailbox-name"><a href="#"> - </a></td>
+                                                <td class="mailbox-subject"><b>计算病毒</b> 不要点开 ...
+                                                </td>
+                                                <td class="mailbox-attachment"></td>
+                                                <td class="mailbox-date">2019-05-08 12:09</td>
+                                            </tr>
+                                            </tbody>
+                                        </table>
+                                        <!-- /.table -->
+                                    </div>
+                                    <!-- /.mail-box-messages -->
+                                </div>
+                                <!-- /.box-body -->
+                                <div class="box-footer no-padding">
+                                    <div class="mailbox-controls">
+                                        <!-- Check all button -->
+                                        <button type="button" class="btn btn-default btn-sm checkbox-toggle"><i class="fa fa-square-o"></i>
+                                        </button>
+                                        <div class="btn-group">
+                                            <button type="button" class="btn btn-default btn-sm"><i class="fa fa-remove"></i></button>
+                                        </div>
+                                        <!-- /.btn-group -->
+                                        <button type="button" class="btn btn-default btn-sm"><i class="fa fa-refresh"></i></button>
+                                        <div class="pull-right">
+                                            1-20/200
+                                            <div class="btn-group">
+                                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-left"></i></button>
+                                                <button type="button" class="btn btn-default btn-sm"><i class="fa fa-chevron-right"></i></button>
+                                            </div>
+                                            <!-- /.btn-group -->
+                                        </div>
+                                        <!-- /.pull-right -->
+                                    </div>
+                                </div>
+
+                            </div>
+                            <!-- 回收站-end -->
+                            <div class="tab-pane active" id="check">
+                                <div class="box-header with-border">
+                                    <h3 class="box-title">查看消息</h3>
+                                </div>
+                                <!-- /.box-header -->
+                                <div class="box-body no-padding">
+                                    <div class="box box-widget" style="margin-bottom: 0">
+                                        <div class="box-header with-border">
+                                            <div class="user-block">
+                                                <img class="img-circle" src="../img/user6-128x128.jpg" alt="路人甲">
+                                                <span class="username"><a href="#">路人甲</a></span>
+
+                                                <span class="description">2019-06-11 11:00</span>
+                                            </div>
+                                            <div class="box-tools">
+                                                <button class="btn btn-default btn-sm" onclick="history.go(-1)" title="返回上一页">
+                                                    <i class="fa fa-reply"></i>
+                                                </button>
+                                                <button class="btn btn-default btn-sm">
+                                                    <i class="fa fa-refresh"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        <!-- /.box-header -->
+                                        <div class="box-body">
+                                            <h4>中医理论 - <small>完善的中医历史</small></h4>
+                                            <!-- post text -->
+                                            <p>中医理论来源于对医疗经验的总结及中国古代的阴阳五行思想。其内容包括精气学说、阴阳五行学说、
+                                                气血津液、藏象、经络、体质、病因、发病、病机、治则、养生等。早在两千多年前，
+                                                中医专著《黄帝内经》问世，奠定了中医学的基础。时至今日，中国传统医学相关的理论、
+                                                诊断法、治疗方法等，均可在此书中找到根源。</p>
+
+                                            <p>中医学理论体系是经过长期的临床实践，在唯物论和辨证法思想指导下
+                                                逐步形成的，它来源于实践，反过来又指导实践。通过对现象的分析，
+                                                以探求其内在机理。</p>
+                                        </div>
+                                        <!-- /.box-body -->
+                                        <div class="box-footer box-comments">
+                                            <div class="box-comment">
+                                                <!-- User image -->
+                                                <img class="img-circle img-sm" src="../img/user8-128x128.jpg" alt="王医生">
+
+                                                <div class="comment-text">
                                           <span class="username">
                                             王医生
                                             <span class="text-muted pull-right">2019-06-26 12:15</span>
                                           </span>
-                                            气是构成天地万物的原始物质。气的运动称为“气机”，有“升降出入”四种形式。
-                                            由运动而产生的各种变化，称为“气化”，如动物的“生长壮老已” ，
-                                            植物的“生长化收藏”。
-                                        </div>
-                                    </div>
-                                    <div class="box-comment">
-                                        <img class="img-circle img-sm" src="../img/user6-128x128.jpg" alt="路人甲">
+                                                    气是构成天地万物的原始物质。气的运动称为“气机”，有“升降出入”四种形式。
+                                                    由运动而产生的各种变化，称为“气化”，如动物的“生长壮老已” ，
+                                                    植物的“生长化收藏”。
+                                                </div>
+                                            </div>
+                                            <div class="box-comment">
+                                                <img class="img-circle img-sm" src="../img/user6-128x128.jpg" alt="路人甲">
 
-                                        <div class="comment-text">
+                                                <div class="comment-text">
                                           <span class="username">
                                             路人甲
                                             <span class="text-muted pull-right">2019-06-26 14:15</span>
                                           </span>
-                                            阴阳的交互作用包括：阴阳交感、对立制约、互根互用、消长平衡、相互转化。
+                                                    阴阳的交互作用包括：阴阳交感、对立制约、互根互用、消长平衡、相互转化。
+                                                </div>
+                                            </div>
                                         </div>
-                                    </div>
-                                </div>
-                                <div class="box-footer">
-                                    <form action="#" method="post">
-                                        <img class="img-responsive img-circle img-sm" src="../img/user8-128x128.jpg" alt="发送方">
-                                        <div class="img-push">
-                                            <div class="input-group margin">
-                                                <input type="text" class="form-control input-sm" placeholder="输入要发送的消息">
-                                                <span class="input-group-btn">
+                                        <div class="box-footer">
+                                            <form action="#" method="post">
+                                                <img class="img-responsive img-circle img-sm" src="../img/user8-128x128.jpg" alt="发送方">
+                                                <div class="img-push">
+                                                    <div class="input-group margin">
+                                                        <input type="text" class="form-control input-sm" placeholder="输入要发送的消息">
+                                                        <span class="input-group-btn">
                                                     <button class="btn btn-default btn-flat input-sm" style="padding: 5px 10px;color: #c1c1c1">
                                                         <i class="fa fa-eject"></i>
                                                     </button>
                                                 </span>
-                                            </div>
+                                                    </div>
 
+                                                </div>
+                                            </form>
                                         </div>
-                                    </form>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                        <!-- /.box-body -->
+                        <!-- /.tab-content -->
                     </div>
-                    <!-- /. box -->
+                    <!-- nav-tabs-custom -->
                 </div>
                 <!-- /.col -->
             </div>
+            <!-- 选项卡页面-end -->
+
         </section>
     </div>
-<footer class="main-footer">
-    <div class="pull-right hidden-xs">
-        当前系统版本 V1.0.0
-    </div>
-    <strong>Copyright &copy; 2019 <a href="#">亦揽工作室</a>.</strong> 版权所有.
-</footer>
-<div class="control-sidebar-bg"></div>
+    <footer class="main-footer">
+        <div class="pull-right hidden-xs">
+            当前系统版本 V1.0.0
+        </div>
+        <strong>Copyright &copy; 2019 <a href="#">亦揽工作室</a>.</strong> 版权所有.
+    </footer>
+    <div class="control-sidebar-bg"></div>
 </div>
 <!-- js脚本 -->
 <script src="../framework/jquery/jquery.min.js"></script>
@@ -266,5 +892,43 @@
 <script src="../framework/jquery-slimscroll/jquery.slimscroll.min.js"></script>
 <script src="../framework/iCheck/icheck.min.js"></script>
 <script src="../framework/layer/layer.js"></script>
+<script>
+    $(function(){
+        $('.mailbox-messages input[type="checkbox"]').iCheck({
+            checkboxClass: 'icheckbox_flat-blue',
+            radioClass: 'iradio_flat-blue'
+        });
+        $(".checkbox-toggle").click(function () {
+            var clicks = $(this).data('clicks');
+            if (clicks) {
+                $(".mailbox-messages input[type='checkbox']").iCheck("uncheck");
+                $(".fa", this).removeClass("fa-check-square-o").addClass('fa-square-o');
+            } else {
+                //Check all checkboxes
+                $(".mailbox-messages input[type='checkbox']").iCheck("check");
+                $(".fa", this).removeClass("fa-square-o").addClass('fa-check-square-o');
+            }
+            $(this).data("clicks", !clicks);
+        });
+        $(".mailbox-star").click(function (e) {
+            e.preventDefault();
+            //detect type
+            var $this = $(this).find("a > i");
+            var glyph = $this.hasClass("glyphicon");
+            var fa = $this.hasClass("fa");
+
+            //Switch states
+            if (glyph) {
+                $this.toggleClass("glyphicon-star");
+                $this.toggleClass("glyphicon-star-empty");
+            }
+
+            if (fa) {
+                $this.toggleClass("fa-star");
+                $this.toggleClass("fa-star-o");
+            }
+        });
+    });
+</script>
 </body>
 </html>
